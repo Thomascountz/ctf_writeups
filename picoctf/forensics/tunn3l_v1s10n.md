@@ -94,7 +94,7 @@ Image Height                    : 306
 Image Size                      : 1134x306
 ```
 
-If the Image Width is correct (we assume by just looking at the picture), we can calculate what the expected hight should be.
+If the Image Width of `1134` is correct (we're making a big assumption by just looking at the picture, but if we're wrong, we can backtrack and try to modify the width), we can calculate what the hight should be set to.
 
 ```ruby
 total_bytes = 2893454
