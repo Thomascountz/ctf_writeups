@@ -106,7 +106,7 @@ height = (total_bytes - header_size) / (image_pixel_width * bytes_per_pixel)
 #=> 850
 ```
 
-Knowing that bytes 23-26 specify the image height, we can take a look at the hexdump and see that it's set to `0x00000132` or `306` like `exiftool` told us. Let's edit the file to `0x352`
+Knowing that bytes 23-26 specify the image height, we can take a look at the hexdump and see that it's set to `0x00000132` or `306` like `exiftool` told us. Let's edit the file to specify `850` or `0x352`, in hex.
 
 ```shell
 $ hexdump tunn3l_v1s10n.bmp | head -n 2
