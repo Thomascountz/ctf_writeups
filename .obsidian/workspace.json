@@ -154,12 +154,12 @@
   },
   "active": "b34079145593a0b1",
   "lastOpenFiles": [
+    "picoctf/forensics/glory_in_the_garden.md",
+    "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+    "picoctf/forensics/tunn3l_v1s10n.md",
     "picoctf/forensics/Untitled.md",
     "templates/_picoctf.md",
-    "picoctf/forensics/tunn3l_v1s10n.md",
     "picoctf/forensics/matryoshka_doll.md",
-    "picoctf/forensics/information.md",
-    "picoctf/forensics/glory_in_the_garden.md",
-    "picoctf/forensics/wireshark_doo_dooo_do_doo.md"
+    "picoctf/forensics/information.md"
   ]
 }
