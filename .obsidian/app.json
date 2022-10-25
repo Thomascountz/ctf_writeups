@@ -7,5 +7,6 @@
   "useMarkdownLinks": true,
   "promptDelete": false,
   "attachmentFolderPath": "./attachments",
-  "showUnsupportedFiles": false
+  "showUnsupportedFiles": false,
+  "newLinkFormat": "relative"
 }

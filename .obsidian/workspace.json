@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "templates/_picoctf.md",
+                "file": "picoctf/forensics/glory_in_the_garden.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "templates/_picoctf.md",
+                "file": "picoctf/forensics/glory_in_the_garden.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "templates/_picoctf.md",
+                "file": "picoctf/forensics/glory_in_the_garden.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "templates/_picoctf.md"
+                "file": "picoctf/forensics/glory_in_the_garden.md"
               }
             }
           }
@@ -141,12 +141,12 @@
   },
   "active": "b34079145593a0b1",
   "lastOpenFiles": [
+    "picoctf/forensics/information.md",
+    "picoctf/forensics/matryoshka_doll.md",
     "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
     "picoctf/forensics/tunn3l_v1s10n.md",
-    "picoctf/forensics/matryoshka_doll.md",
-    "picoctf/forensics/information.md",
-    "picoctf/forensics/glory_in_the_garden.md",
     "templates/_picoctf.md",
+    "picoctf/forensics/glory_in_the_garden.md",
     "picoctf/forensics/Untitled.md"
   ]
 }

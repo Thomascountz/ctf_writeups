@@ -16,7 +16,7 @@ PcapNg (the file extension) is a PCAP Next Generation Dump File Format to overco
 
 [The top tool for PCAP analysis is Wireshark](https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis), and PcapNg can be opened without conversion in Wireshark, too.
 
-![](shark1pcapng_in_wireshark.png)
+![](./attachments/shark1pcapng_in_wireshark.png)
 There are some [suggested filters](https://book.hacktricks.xyz/generic-methodologies-and-resources/basic-forensic-methodology/pcap-inspection/wireshark-tricks#filters) to use to sift through the streams. Some CTF writeups have suggested to begin HTTP analysis with a `200` filter.
 
 ```
@@ -27,12 +27,12 @@ After doing so, we can see that all but two are `(application/http-kerberos-sess
 
 So ignoring those for now, the other two streams are `(text/html)` and `(text/plain)`.
 
-![](shark1pcapng_in_wireshark_text_requests.png)
+![](./attachments/shark1pcapng_in_wireshark_text_requests.png)
 To view these streams as the application would, we can use Wireshark's [follow](https://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowStreamSection.html) feature. 
 
 Doing so gives us a more familiar view of the HTTP request and response.
 
-![](shark1pcapng_http_stream_5.png)
+![](./attachments/shark1pcapng_http_stream_5.png)
 Following the first `(text/html)` stream, we get this view.
 
 The response body contains a _somewhat_ familiar-looking string. Similar to the `picoCTF{flag}` format of the CTF flag.

@@ -86,11 +86,11 @@ $ hexdump tunn3l_v1s10n.bmp | head -n 2
 
 This works! We can open the file. But sadly, we see `notaflag{sorry}`
 
-![](tunn3l_v1s10n_false_flag.png)
+![](./attachments/tunn3l_v1s10n_false_flag.png)
 
 > **Note** The colors look a bit off. That's because bytes 11-14, the "image offset," should be the offset from beginning of file to the beginning of the bitmap data. In our case, the bitmap data begins at an offset of 14 + 40 bytes, the header and info header sizes respectively. This would put the offset at 54 bytes or `0x36`. [source](http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm).
 
-![](tunn3l_v1s10n_false_flag_correct_offset.png)
+![](./attachments/tunn3l_v1s10n_false_flag_correct_offset.png)
 
 Using `exiftool` on the uncorrupted file, we can observe the image resolution and file size discrepency.
 
@@ -132,4 +132,4 @@ And we have the flag.
 picoCTF{qu1t3_a_v13w_2020}`.
 ```
 
-![](tunn3l_v1s10n_complete.png)
+![](./attachments/tunn3l_v1s10n_complete.png)
