@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "file": "templates/_picoctf.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "file": "templates/_picoctf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "file": "templates/_picoctf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md"
+                "file": "templates/_picoctf.md"
               }
             }
           }
@@ -141,12 +141,12 @@
   },
   "active": "b34079145593a0b1",
   "lastOpenFiles": [
-    "templates/_picoctf.md",
     "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
-    "picoctf/forensics/glory_in_the_garden.md",
     "picoctf/forensics/tunn3l_v1s10n.md",
-    "picoctf/forensics/Untitled.md",
     "picoctf/forensics/matryoshka_doll.md",
-    "picoctf/forensics/information.md"
+    "picoctf/forensics/information.md",
+    "picoctf/forensics/glory_in_the_garden.md",
+    "templates/_picoctf.md",
+    "picoctf/forensics/Untitled.md"
   ]
 }

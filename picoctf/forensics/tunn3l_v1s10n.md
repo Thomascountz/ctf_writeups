@@ -2,6 +2,7 @@
 ctf: picoctf
 competition: false
 categories: forensics
+tools: hexdump, exiftool, hexdump, 
 url: https://play.picoctf.org/practice/challenge/112
 captured: 2022-10-24
 flag: picoCTF{qu1t3_a_v13w_2020}
@@ -125,6 +126,10 @@ $ hexdump tunn3l_v1s10n.bmp | head -n 2
 0000010 0000 046e 0000 0352 0000 0001 0018 0000
 ```
 
-And we have the flag, `picoCTF{qu1t3_a_v13w_2020}`.
+And we have the flag.
+
+```
+picoCTF{qu1t3_a_v13w_2020}`.
+```
 
 ![](tunn3l_v1s10n_complete.png)
