@@ -11,7 +11,7 @@ flag: picoCTF{qu1t3_a_v13w_2020}
 
 > We found this file. Recover the flag.
 
-Although `file` just outputs "data," if we use hexdump to exampe the [magic_bytes](/reference/magic_bytes.md), we can see this might be a `.bmp` file.
+Although `file` just outputs "data," if we use hexdump to examine the [magic_bytes](/reference/magic_bytes.md), we can see this might be a `.bmp` file.
 
 ```shell
 $ hexdump -C tunn3l_v1s10n | head -1
@@ -42,19 +42,30 @@ There's a clue in the header: two two-byte sequences `bad0`, or "bad". The heade
 There are more requirements in the docs.
 
 > Byte 1,2 should be [0x4D 0x42]: 424D
+>
 > Bytes 3-6 (Images Size) 0000073E
+>
 > Bytes 7,8 (Must be zero) 0000
+>
 > Bytes 9,10 (Must be zero) 0000
+>
 > Bytes 11-14 (Image offset) 00000036
+>
 > Bytes 15-18 (size of BITMAPINFOHEADER structure, must be 40 [0x28]) 00000028
+>
 > Bytes 19-22 (image width) 00000018
+>
 > Bytes 23-26 (image height) 00000019
+>
 > Bytes 27,28 (number of planes in the image, must be 1) 0001
+>
 > Bytes 29,30 (number of bits per pixel (1, 4, 8, or 24 [0x18])) 0018
+>
 > -- Note 24 bit color, is three bytes of red, green and blue, each
+>
 > [source](https://asecuritysite.com/forensics/bmp?file=activated.bmp)
 
-Our "bad"-byte sequence are located at bytes 11-12 and bytes 15-16. If we look at the requirements above, bytes 11-14 represent the image offset, and therotically that could be 0000d0ba? Bytes 15-18, however, _must_ be 0000002B, but in our case, it's not. Let's look at the next 16 bytes.
+Our "bad"-byte sequence are located at bytes 11-12 and bytes 15-16. If we look at the requirements above, bytes 11-14 represent the image offset, and theoretically that could be 0000d0ba? Bytes 15-18, however, _must_ be 0000002B, but in our case, it's not. Let's look at the next 16 bytes.
 
 ```shell
 $ hexdump -C tunn3l_v1s10n | head -n 2
@@ -106,7 +117,7 @@ height = (total_bytes - header_size) / (image_pixel_width * bytes_per_pixel)
 #=> 850
 ```
 
-Knowing that bytes 23-26 specify the image height, we can take a look at the hexdump and see that it's set to `0x00000132` or `306` like `exiftool` told us. Let's edit the file to specify `850` or `0x352`, in hex.
+Knowing that bytes 23-26 in the hexdump specify the image height, we can see that it's set to `0x00000132` or `306` like `exiftool` told us. Let's edit the file to specify `850` or `0x352`, in hex.
 
 ```shell
 $ hexdump tunn3l_v1s10n.bmp | head -n 2
