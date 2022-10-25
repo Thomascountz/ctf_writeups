@@ -1,0 +1,165 @@
+{
+  "main": {
+    "id": "f60a0186ac8a672e",
+    "type": "split",
+    "children": [
+      {
+        "id": "d28954592fe21347",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8ddf7c054e7e2de",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "templates/_picoctf.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b34079145593a0b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8e3bd59c0bc7b89d",
+    "type": "split",
+    "children": [
+      {
+        "id": "25e87134056b6a5e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7dd235dbfccbc72e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "c02884df7a640f26",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0c37200dbddbd43a",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "bb78030f85084c58",
+    "type": "split",
+    "children": [
+      {
+        "id": "edccbc90370bf0b3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cdbe56eb06456d8a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ca808f5396810793",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a1a40a78a8dba27f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "c645429345a63b0f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "picoctf/forensics/wireshark_doo_dooo_do_doo.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "b34079145593a0b1",
+  "lastOpenFiles": [
+    "picoctf/forensics/Untitled.md",
+    "templates/_picoctf.md",
+    "picoctf/forensics/tunn3l_v1s10n.md",
+    "picoctf/forensics/matryoshka_doll.md",
+    "picoctf/forensics/information.md",
+    "picoctf/forensics/glory_in_the_garden.md",
+    "picoctf/forensics/wireshark_doo_dooo_do_doo.md"
+  ]
+}

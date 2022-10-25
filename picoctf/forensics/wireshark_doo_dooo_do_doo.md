@@ -13,5 +13,7 @@ flag:
 
 PcapNg (the file extension) is a PCAP Next Generation Dump File Format to overcome the limitations of the libpcap format. [source](https://wiki.wireshark.org/Development/PcapNg)
 
-This has something to do with wireshark (hence the name), which is a network protocol analyzer. PcapNg is a way to capture live data packets into a file.
+PcapNg can immediately be opened in wireshark.
+
+
 

@@ -1,0 +1,9 @@
+{
+  "spellcheck": true,
+  "vimMode": true,
+  "showInlineTitle": false,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true,
+  "promptDelete": false
+}
