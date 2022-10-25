@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c8ddf7c054e7e2de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "templates/_picoctf.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "b34079145593a0b1",
             "type": "leaf",
             "state": {
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -154,11 +141,11 @@
   },
   "active": "b34079145593a0b1",
   "lastOpenFiles": [
-    "picoctf/forensics/glory_in_the_garden.md",
+    "templates/_picoctf.md",
     "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+    "picoctf/forensics/glory_in_the_garden.md",
     "picoctf/forensics/tunn3l_v1s10n.md",
     "picoctf/forensics/Untitled.md",
-    "templates/_picoctf.md",
     "picoctf/forensics/matryoshka_doll.md",
     "picoctf/forensics/information.md"
   ]
