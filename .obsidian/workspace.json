@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "444f72f6128f7674",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "reference/Resources.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "picoctf/forensics/glory_in_the_garden.md",
+                "file": "reference/Resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "picoctf/forensics/glory_in_the_garden.md",
+                "file": "reference/Resources.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "picoctf/forensics/glory_in_the_garden.md"
+                "file": "reference/Resources.md"
               }
             }
           }
@@ -139,14 +152,14 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "b34079145593a0b1",
+  "active": "444f72f6128f7674",
   "lastOpenFiles": [
+    "picoctf/forensics/glory_in_the_garden.md",
     "picoctf/forensics/information.md",
     "picoctf/forensics/matryoshka_doll.md",
     "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
     "picoctf/forensics/tunn3l_v1s10n.md",
     "templates/_picoctf.md",
-    "picoctf/forensics/glory_in_the_garden.md",
     "picoctf/forensics/Untitled.md"
   ]
 }
