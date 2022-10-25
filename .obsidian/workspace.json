@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "picoctf/forensics/glory_in_the_garden.md",
+                "file": "writeups/picoctf/forensics/glory_in_the_garden.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reference/Resources.md",
+                "file": "writeups/picoctf/forensics/glory_in_the_garden.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reference/Resources.md",
+                "file": "writeups/picoctf/forensics/glory_in_the_garden.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,11 +137,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reference/Resources.md"
+                "file": "writeups/picoctf/forensics/glory_in_the_garden.md"
               }
             }
+          },
+          {
+            "id": "ea070cf9e3474b77",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -152,13 +160,15 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "444f72f6128f7674",
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
-    "picoctf/forensics/glory_in_the_garden.md",
-    "picoctf/forensics/information.md",
-    "picoctf/forensics/matryoshka_doll.md",
-    "picoctf/forensics/wireshark_doo_dooo_do_doo.md",
-    "picoctf/forensics/tunn3l_v1s10n.md",
+    "reference/Resources.md",
+    "reference/magic_bytes.md",
+    "writeups/picoctf/forensics/glory_in_the_garden.md",
+    "writeups/picoctf/forensics/information.md",
+    "writeups/picoctf/forensics/matryoshka_doll.md",
+    "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+    "writeups/picoctf/forensics/tunn3l_v1s10n.md",
     "templates/_picoctf.md",
     "picoctf/forensics/Untitled.md"
   ]
