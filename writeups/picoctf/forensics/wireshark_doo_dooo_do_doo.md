@@ -5,7 +5,7 @@ categories: forensics
 tools: wireshark, dcode-cipher-identifier, cyberchef
 url: https://play.picoctf.org/practice/challenge/115
 captured: 2022-10-25
-flag: The flag is picoCTF{p33kab00_1_s33_u_deadbeef}
+flag: picoCTF{p33kab00_1_s33_u_deadbeef}
 ---
 
 # Wireshark doo dooo do doo...
