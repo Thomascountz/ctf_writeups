@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf/forensics/macroHard_weakEdge.md",
+                "file": "writeups/picoctf/forensics/macrohard_weakedge.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf/forensics/macroHard_weakEdge.md",
+                "file": "writeups/picoctf/forensics/macrohard_weakedge.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf/forensics/macroHard_weakEdge.md",
+                "file": "writeups/picoctf/forensics/macrohard_weakedge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf/forensics/macroHard_weakEdge.md"
+                "file": "writeups/picoctf/forensics/macrohard_weakedge.md"
               }
             }
           },
@@ -176,7 +176,7 @@
   "active": "4976ffda34ad1d7c",
   "lastOpenFiles": [
     "writeups/picoctf/forensics/information.md",
-    "writeups/picoctf/forensics/macroHard_weakEdge.md",
+    "writeups/picoctf/forensics/macrohard_weakedge.md",
     "Untitled.md",
     "writeups/picoctf/forensics/glory_in_the_garden.md",
     "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
