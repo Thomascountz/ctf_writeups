@@ -58,7 +58,7 @@ Let's see what those ASCII characters are using dcode.fr's cypher identifier.
 We get a hit for our friend, ROT13!
 
 ```
-TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN.
+TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN
 ```
 
 So `10.10.10.11` is telling `10.10.10.11` that they'll need to disguise the transfer of the flag somehow because TFTP isn't encrypted. They said they'll "...check back for the plan," so I wonder if we can find some other streams in the PcapNg file that show requests for a `plan` file.
@@ -102,7 +102,7 @@ Let's try to see what the `plan` was, i.e., what's in the data packet response?
 This looks like more ROT13.
 
 ```
-IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS.
+IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
 ```
 
 Let's take a look at the rest of the requests.
