@@ -102,7 +102,7 @@ Let's try to see what the `plan` was, i.e., what's in the data packet response?
 This looks like more ROT13.
 
 ```
-IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS.
 ```
 
 Let's take a look at the rest of the requests.
@@ -114,7 +114,7 @@ Let's take a look at the rest of the requests.
 | 3790   | 3.727568743 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture2.bmp, Transfer type: octet |
 | 146683 | 2.818313205 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture3.bmp, Transfer type: octet |
 
-We see the request from earlier to `program.deb`, and then we see three `bmp` files. All of them are transferred without error.
+We see the request from earlier to `program.deb`, and then we see three `bmp` image files. All of them are transferred without error.
 
 
 
