@@ -10,7 +10,7 @@ flag: picoCTF{D1d_u_kn0w_ppts_r_z1p5}
 
 # MacroHard WeakEdge
 
-> I've hidden a flag in this file. Can you find it? [Forensics is fun.pptm](https://mercury.picoctf.net/static/9a7436948cc502e9cacf5bc84d2cccb5/Forensics is fun.pptm)
+> I've hidden a flag in this file. Can you find it?
 
 First things first, find out what kind of file you have using `file`.
 
@@ -21,7 +21,7 @@ Forensics is fun.pptm: Microsoft PowerPoint 2007+
 
 Ah, a Microsoft Office document!
 
-> Broadly speaking, there are two generations of Office file format: the OLE formats (file extensions like RTF, DOC, XLS, PPT), and the "Office Open XML" formats (file extensions that include DOCX, XLSX, PPTX). Both formats are structured, compound file binary formats that enable Linked or Embedded content (Objects). OOXML files are actually zip file containers (see the section above on archive files), meaning that one of the easiest ways to check for hidden data is to simply `unzip` the document [source](https://trailofbits.github.io/ctf/forensics/#office-file-analysis)
+> Broadly speaking, there are two generations of Office file format: the OLE formats (file extensions like RTF, DOC, XLS, PPT), and the "Office Open XML" formats (file extensions that include DOCX, XLSX, PPTX). Both formats are structured, compound file binary formats that enable Linked or Embedded content (Objects). OOXML files are actually zip file containers (see the section above on archive files), meaning that one of the easiest ways to check for hidden data is to simply `unzip` the document. [^1]
 
 Let's use `zipinfo` so that we don't actually end up with the files and directories in our filesystem.
 
@@ -63,12 +63,11 @@ ppt/slides/slide37.xml:...<a:t>Not the flag</a:t>
 
 Funnily enough, we have a hit! ...or more like a _hint_. Maybe we're not suppose to find the flag in the static part of the file. The other thing about offices files is a thing called VBA (Visual Basic Application) macros. 
 
-> You can include Visual Basic for Applications (VBA) code or run COM add-ins only in a macro-enabled document, worksheet, or presentation. You can create a macro-enabled file by saving the documents with a .docm or .dotm extension in Word; an .xlsm, .xltm, or .xlam extension in Excel; or a .pptm, .potm, .ppam, or .ppsm extension in PowerPoint. [source](https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/security-notes-for-microsoft-office-solution-developers)
+> You can include Visual Basic for Applications (VBA) code or run COM add-ins only in a macro-enabled document, worksheet, or presentation. You can create a macro-enabled file by saving the documents with a .docm or .dotm extension in Word; an .xlsm, .xltm, or .xlam extension in Excel; or a .pptm, .potm, .ppam, or .ppsm extension in PowerPoint. [^2] 
 
 These VBA macros can do almost anything on a Windows system and provide attacks a handy vector for things like ransomware and creating back doors.
 
->A typical VBA macro in an Office document, on Windows, will download a PowerShell script to %TEMP% and attempt to execute it, in which case you now have a PowerShell script analysis task too. But malicious VBA macros are rarely complicated, since VBA is [typically just used as a jumping-off platform to bootstrap code execution](https://www.lastline.com/labsblog/party-like-its-1999-comeback-of-vba-malware-downloaders-part-3/). [source](https://trailofbits.github.io/ctf/forensics/#office-file-analysis)
-
+>A typical VBA macro in an Office document, on Windows, will download a PowerShell script to %TEMP% and attempt to execute it, in which case you now have a PowerShell script analysis task too. But malicious VBA macros are rarely complicated, since VBA is [typically just used as a jumping-off platform to bootstrap code execution](https://www.lastline.com/labsblog/party-like-its-1999-comeback-of-vba-malware-downloaders-part-3/). [^3]
 
 Let's use `oleid` to see if there are any VBA macros embedded in our file.
 
@@ -151,4 +150,9 @@ It is! How do we recognize base64 encoded strings? One way is use a tool like [C
 > -   The length of a Base64-encoded string is always a multiple of 4
 > -   Only these characters are used by the encryption: “A” to “Z”, “a” to “z”, “0” to “9”, “+” and “/”
 > -   The end of a string can be padded up to two times using the “=”-character (this character is allowed in the end only)
-> [source](https://www.hannesholst.com/blog/how-to-identify-a-base64-encoded-string/)
+> [^4] 
+
+[^1]: https://trailofbits.github.io/ctf/forensics/#office-file-analysis
+[^2]: https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/security-notes-for-microsoft-office-solution-developers
+[^3]: https://trailofbits.github.io/ctf/forensics/#office-file-analysis
+[^4]: https://www.hannesholst.com/blog/how-to-identify-a-base64-encoded-string/
