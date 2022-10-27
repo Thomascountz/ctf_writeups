@@ -159,9 +159,6 @@
     "width": 300,
     "collapsed": true
   },
-  "ribbon": {
-    "mostRecentAction": ""
-  },
   "active": "0c1f37526f2167fb",
   "lastOpenFiles": [
     "writeups/picoctf/forensics/macrohard_weakedge.md",

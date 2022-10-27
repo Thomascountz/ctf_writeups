@@ -2,7 +2,7 @@
 ctf: picoctf
 competition: false
 categories: forensics
-tools: wireshark, dcode-cypher-identifier
+tools: wireshark, dcode-cypher-identifier, dpkg-deb
 url: https://play.picoctf.org/practice/challenge/103
 captured: 
 flag: 
@@ -120,6 +120,51 @@ With Wireshark, you can extract/export objects transferred via different protoco
 
 ![](attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
 
+The `plan` said "IUSEDTHEPROGRAM..." so let's find out what `program.deb` is.
 
+> A DEB file is a software package used by the Debian [Linux](https://techterms.com/definition/linux) distribution and its variants, such as Ubuntu. DEB files are used primarily to install or update [Unix](https://techterms.com/definition/unix) applications. [^2]
+
+We can use the tool `dpkg-deb` to do things like inspect the file contents, extract them, and list information about the package.
+
+```shell
+$ dpkg --info program.deb 
+ new Debian package, version 2.0.
+ size 138310 bytes: control archive=1250 bytes.
+     826 bytes,    18 lines      control              
+    1184 bytes,    17 lines      md5sums              
+ Package: steghide
+ Source: steghide (0.5.1-9.1)
+ Version: 0.5.1-9.1+b1
+ Architecture: amd64
+ Maintainer: Ola Lundqvist <opal@debian.org>
+ Installed-Size: 426
+ Depends: libc6 (>= 2.2.5), libgcc1 (>= 1:4.1.1), libjpeg62-turbo (>= 1:1.3.1), libmcrypt4, libmhash2, libstdc++6 (>= 4.9), zlib1g (>= 1:1.1.4)
+ Section: misc
+ Priority: optional
+ Description: A steganography hiding tool
+  Steghide is steganography program which hides bits of a data file
+  in some of the least significant bits of another file in such a way
+  that the existence of the data file is not visible and cannot be proven.
+  .
+  Steghide is designed to be portable and configurable and features hiding
+  data in bmp, wav and au files, blowfish encryption, MD5 hashing of
+  passphrases to blowfish keys, and pseudo-random distribution of hidden bits
+  in the container data.
+```
+
+Ok! I already have `steghide` installed (and even if I didn't, I wouldn't trust installing it using this `.deb` package), so let's see what happens when we run it on `.bmp` files.
+
+```shell
+$ steghide extract -sf picture1.bmp 
+Enter passphrase:
+```
+
+Aha! It's asking for a passphrase. "...ANDHIDITWITH-DUEDILIGENCE..."
+
+Let's try it.
+
+```
+```
 
 [^1]: https://www.rfc-editor.org/rfc/rfc1350
+[^2]: https://fileinfo.com/extension/deb 
