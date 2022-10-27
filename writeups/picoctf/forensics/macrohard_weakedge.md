@@ -6,6 +6,7 @@ tools: file, unzip, grep, oleid, olevba, base64
 url: https://play.picoctf.org/practice/challenge/130
 captured: 2022-10-26
 flag: picoCTF{D1d_u_kn0w_ppts_r_z1p5}
+summary: The Windows document was unzipped to reveal a hidden file containing a base64 encoded flag.
 ---
 
 # MacroHard WeakEdge

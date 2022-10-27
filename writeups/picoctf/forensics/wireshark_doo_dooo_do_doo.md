@@ -6,6 +6,7 @@ tools: wireshark, dcode-cipher-identifier, cyberchef
 url: https://play.picoctf.org/practice/challenge/115
 captured: 2022-10-25
 flag: picoCTF{p33kab00_1_s33_u_deadbeef}
+summary: Used wireshark to follow an unencrypted TCP trace in a PcapNg file that revealed the ROT13 encoded flag in the response body.
 ---
 
 # Wireshark doo dooo do doo...

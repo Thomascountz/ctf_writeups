@@ -6,6 +6,7 @@ tools: exiftool, strings, png-file-chunck-inspector, cyberchef, unzip
 url: https://play.picoctf.org/practice/challenge/129
 captured: 2022-10-24
 flag: picoCTF{336cf6d51c9d9774fd37196c1d7320ff}
+summary: Used exiftool to reveal an archive file carved into a png after the IEND chunk that then could be unzipped to reveal the plaintext flag file.
 ---
 
 # Matryoshka Doll

@@ -6,6 +6,7 @@ tools: hexdump, exiftool, hexdump, hexed.it
 url: https://play.picoctf.org/practice/challenge/112
 captured: 2022-10-24
 flag: picoCTF{qu1t3_a_v13w_2020}
+summary: Used hexdump to discover (and exiftool to manually repair) the corrupted header bytes of a bmp file to reveal the flag in the image.
 ---
 
 # tunn3l v1s10n
