@@ -15,3 +15,4 @@ summary:
 
 The file is a large (`50MB`) PcapNg, which we've seen in [wireshark_doo_dooo_do_doo](wireshark_doo_dooo_do_doo.md).
 
+There are a lot of TFTP (_Trivial_ File Transfer Protocol) streams.
