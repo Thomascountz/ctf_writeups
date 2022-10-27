@@ -105,6 +105,17 @@ This looks like more ROT13.
 IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
 ```
 
-Let's take a look at the rest of the packets. A lot of them are for transferring 
+Let's take a look at the rest of the requests.
+
+| No.    | Time        | Source      | Destination | Protocol | Length | Info                                                   |
+| ------ | ----------- | ----------- | ----------- | -------- | ------ | ------------------------------------------------------ |
+| 22     | 5.042819037 | 10.10.10.11 | 10.10.10.12 | TFTP     | 62     | Read Request, File: program.deb, Transfer type: octet  |
+| 567    | 3.711624110 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture1.bmp, Transfer type: octet |
+| 3790   | 3.727568743 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture2.bmp, Transfer type: octet |
+| 146683 | 2.818313205 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture3.bmp, Transfer type: octet |
+
+We see the request from earlier to `program.deb`, and then we see three `bmp` files. All of them are transferred without error.
+
+
 
 [^1]: https://www.rfc-editor.org/rfc/rfc1350
