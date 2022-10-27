@@ -2,7 +2,7 @@
 ctf: picoctf
 competition: false
 categories: forensics
-tools: wireshark
+tools: wireshark, dcode-cypher-identifier
 url: https://play.picoctf.org/practice/challenge/103
 captured: 
 flag: 
@@ -46,4 +46,67 @@ Let's take a look at the data that was transferred in the data packet.
 0090   4f 4e 50 58 53 42 45 47 55 52 43 59 4e 41 0a      ONPXSBEGURCYNA.
 ```
 
-[^1]: https://www.rfc-editor.org/rfc/rfc1350#section-2). Overview of the Protocol
+>  As mentioned TFTP is designed to be implemented on top of the Datagram protocol (UDP).  Since Datagram is implemented on the Internet protocol, packets will have an Internet header, a Datagram header, and a TFTP header.  Additionally, the packets may have a header (LNI, ARPA header, etc.)  to allow them through the local transport medium. ...the order of the contents of a packet will be: local medium header, if used, Internet header, Datagram header, TFTP header, followed by the remainder of the TFTP packet. [^1]
+
+We're interested in just the "...remainder of the TFTP packet", which here shows up as a string of ASCII characters in bytes `47-159`.
+
+> **Note**
+> We can also see TFTP opcode (`03` for DATA) and block number (`01`) in the TFTP in bytes `42-46`
+
+Let's see what those ASCII characters are using dcode.fr's cypher identifier.
+
+We get a hit for our friend, ROT13!
+
+```
+TFTPDOESNTENCRYPTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN.
+```
+
+So `10.10.10.11` is telling `10.10.10.11` that they'll need to disguise the transfer of the flag somehow because TFTP isn't encrypted. They said they'll "...check back for the plan," so I wonder if we can find some other streams in the PcapNg file that show requests for a `plan` file.
+
+| No. | Time         | Source      | Destination | Protocol | Length | Info                                                      |
+| --- | ------------ | ----------- | ----------- | -------- | ------ | --------------------------------------------------------- |
+| 9   | 3.499792153  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Read Request, File: plan, Transfer type: octet            |
+| 10  | 0.000337875  | 10.10.10.12 | 10.10.10.11 | TFTP     | 61     | Error Code, Code: File not found, Message: File not found |
+| 11  | 28.328590469 | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Read Request, File: plan, Transfer type: octet            |
+| 12  | 0.000350480  | 10.10.10.12 | 10.10.10.11 | TFTP     | 61     | Error Code, Code: File not found, Message: File not found |
+
+Sure enough, we see read file requests followed by errors of opcode `01` - File not found.
+
+> An ERROR packet can be the acknowledgment of any other type of packet. The error code is an integer indicating the nature of the error. [^1]
+
+Then, we see another read request for `plan`, only this time, it's followed by an `Data Packet` response, an `Acknowledgement`, a request to read `program.deb`, and then `2865` blocks of data packets and acknowledgements...
+
+| No.    | Time         | Source      | Destination | Protocol | Length | Info                                                  |
+| ------ | ------------ | ----------- | ----------- | -------- | ------ | ----------------------------------------------------- |
+| 19     | 11.726225781 | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Read Request, File: plan, Transfer type: octet        |
+| 20     | 0.000490193  | 10.10.10.12 | 10.10.10.11 | TFTP     | 105    | Data Packet, Block: 1 (last)                          |
+| 21     | 0.000332354  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: 1                             |
+| 22     | 5.042819037  | 10.10.10.11 | 10.10.10.12 | TFTP     | 62     | Read Request, File: program.deb, Transfer type: octet |
+| 23     | 0.000564406  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: 1                                 |
+| 24     | 0.000273528  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: 1                             |
+| n      | 0.000122046  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: n                                 |
+| n      | 0.000237184  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: n                             |
+| 152412 | 0.000115029  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: 2865                              |
+| 152413 | 0.008310560  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: 2865                          | 
+
+Let's try to see what the `plan` was, i.e., what's in the data packet response?
+
+```
+0000   00 0c 29 79 6b b3 00 0c 29 66 7b ee 08 00 45 00   ..)yk...)f{...E.
+0010   00 5b d4 17 40 00 40 11 3e 50 0a 0a 0a 0c 0a 0a   .[..@.@.>P......
+0020   0a 0b a0 cd ac 7d 00 47 28 83 00 03 00 01 56 48   .....}.G(.....VH
+0030   46 52 51 47 55 52 43 45 42 54 45 4e 5a 4e 41 51   FRQGURCEBTENZNAQ
+0040   55 56 51 56 47 4a 56 47 55 2d 51 48 52 51 56 59   UVQVGJVGU-QHRQVY
+0050   56 54 52 41 50 52 2e 50 55 52 50 58 42 48 47 47   VTRAPR.PURPXBHGG
+0060   55 52 43 55 42 47 42 46 0a                        URCUBGBF.
+```
+
+This looks like more ROT13.
+
+```
+IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+```
+
+
+
+[^1]: https://www.rfc-editor.org/rfc/rfc1350
