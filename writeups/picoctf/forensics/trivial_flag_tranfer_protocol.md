@@ -74,7 +74,7 @@ Sure enough, we see read file requests followed by errors of opcode `01` - File 
 
 > An ERROR packet can be the acknowledgment of any other type of packet. The error code is an integer indicating the nature of the error. [^1]
 
-Then, we see another read request for `plan`, only this time, it's followed by an `Data Packet` response, an `Acknowledgement`, a request to read `program.deb`, and then `2865` blocks of data packets and acknowledgements...
+Then, we see another read request for `plan`, only this time, it's followed by an `Data Packet` response, an `Acknowledgement`, a request to read `program.deb`, and then hundreds of blocks of data packets and acknowledgements...
 
 | No.    | Time         | Source      | Destination | Protocol | Length | Info                                                  |
 | ------ | ------------ | ----------- | ----------- | -------- | ------ | ----------------------------------------------------- |
@@ -86,8 +86,6 @@ Then, we see another read request for `plan`, only this time, it's followed by a
 | 24     | 0.000273528  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: 1                             |
 | n      | 0.000122046  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: n                                 |
 | n      | 0.000237184  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: n                             |
-| 152412 | 0.000115029  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: 2865                              |
-| 152413 | 0.008310560  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: 2865                          | 
 
 Let's try to see what the `plan` was, i.e., what's in the data packet response?
 
@@ -107,6 +105,6 @@ This looks like more ROT13.
 IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
 ```
 
-
+Let's take a look at the rest of the packets. A lot of them are for transferring 
 
 [^1]: https://www.rfc-editor.org/rfc/rfc1350
