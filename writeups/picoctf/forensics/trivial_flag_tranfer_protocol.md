@@ -116,6 +116,10 @@ Let's take a look at the rest of the requests.
 
 We see the request from earlier to `program.deb`, and then we see three `bmp` photo files. All of them are transferred without error.
 
+With Wireshark, you can extract/export objects transferred via different protocols. For use, we can extract TFTP objects to download the six files that we transferred.
+
+![](attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
+
 
 
 [^1]: https://www.rfc-editor.org/rfc/rfc1350
