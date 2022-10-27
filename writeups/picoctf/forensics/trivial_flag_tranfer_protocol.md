@@ -2,7 +2,7 @@
 ctf: picoctf
 competition: false
 categories: forensics
-tools:
+tools: wireshark
 url: https://play.picoctf.org/practice/challenge/103
 captured: 
 flag: 
