@@ -2,11 +2,11 @@
 ctf: picoctf
 competition: false
 categories: forensics
-tools: wireshark, dcode-cypher-identifier, dpkg-deb
+tools: wireshark, dcode-cypher-identifier, dpkg-deb, steghide
 url: https://play.picoctf.org/practice/challenge/103
-captured: 
-flag: 
-summary:
+captured: 2022-10-27
+flag: picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
+summary: Used Wireshark to inspect and download six files trasferred via TFTP. The first two files described instructions and a plan encoded via ROT13. Next, the steghide Debian package and three image files were transferred. Using steghide and the passphrase from the plan file, one of the three image files contained the flag.
 ---
 
 # Trivial Flag Transfer Protocol
@@ -163,7 +163,22 @@ Aha! It's asking for a passphrase. "...ANDHIDITWITH-DUEDILIGENCE..."
 
 Let's try it.
 
+```shell
+$ steghide extract -sf picture1.bmp --passphrase DUEDILIGENCE
+steghide: could not extract any data with that passphrase!
+
+$ steghide extract -sf picture2.bmp --passphrase DUEDILIGENCE
+steghide: premature end of file "picture2.bmp" while reading bmp data.
+
+$ steghide extract -sf picture3.bmp --passphrase DUEDILIGENCE
+wrote extracted data to "flag.txt".
 ```
+
+Let's see what's in `flag.txt`.
+
+```shell
+$ cat flag.txt 
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
 ```
 
 [^1]: https://www.rfc-editor.org/rfc/rfc1350
