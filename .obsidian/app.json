@@ -2,7 +2,7 @@
   "spellcheck": true,
   "vimMode": true,
   "showInlineTitle": false,
-  "trashOption": "local",
+  "trashOption": "system",
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
   "promptDelete": false,

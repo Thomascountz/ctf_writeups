@@ -60,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dcode",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,13 +77,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 280.5,
-    "collapsed": true
+    "width": 280.5
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -159,7 +157,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0c1f37526f2167fb",
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
     "writeups/picoctf/forensics/macrohard_weakedge.md",
     "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",

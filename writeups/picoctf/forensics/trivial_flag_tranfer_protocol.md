@@ -118,7 +118,7 @@ We see the request from earlier to `program.deb`, and then we see three `bmp` ph
 
 With Wireshark, you can extract/export objects transferred via different protocols. For use, we can extract TFTP objects to download the six files that we transferred.
 
-![](attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
+![](./attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
 
 The `plan` said "IUSEDTHEPROGRAM..." so let's find out what `program.deb` is.
 
