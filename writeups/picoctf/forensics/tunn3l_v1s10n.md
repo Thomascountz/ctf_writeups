@@ -22,8 +22,7 @@ $ hexdump -C tunn3l_v1s10n | head -1
 
 We can confirm this by looking at the documentation for BMP files.
 
-> For a BMP file, we look for the byte sequence 42 4D or the ASCII sequence of BM
-> [source](https://asecuritysite.com/forensics/bmp?file=activated.bmp)
+> For a BMP file, we look for the byte sequence 42 4D or the ASCII sequence of BM [^1]
 
 This is also apparent when using `exiftool`.
 
@@ -65,7 +64,7 @@ There are more requirements in the docs.
 >
 > -- Note 24 bit color, is three bytes of red, green and blue, each
 >
-> [source](https://asecuritysite.com/forensics/bmp?file=activated.bmp)
+> [^1]
 
 Our "bad"-byte sequence are located at bytes 11-12 and bytes 15-16. If we look at the requirements above, bytes 11-14 represent the image offset, and theoretically that could be 0000d0ba? Bytes 15-18, however, _must_ be 0000002B, but in our case, it's not. Let's look at the next 16 bytes.
 
@@ -89,11 +88,11 @@ This works! We can open the file. But sadly, we see `notaflag{sorry}`
 
 ![](attachments/tunn3l_v1s10n_false_flag.png)
 
-> **Note** The colors look a bit off. That's because bytes 11-14, the "image offset," should be the offset from beginning of file to the beginning of the bitmap data. In our case, the bitmap data begins at an offset of 14 + 40 bytes, the header and info header sizes respectively. This would put the offset at 54 bytes or `0x36`. [source](http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm).
+> **Note** The colors look a bit off. That's because bytes 11-14, the "image offset," should be the offset from beginning of file to the beginning of the bitmap data. In our case, the bitmap data begins at an offset of 14 + 40 bytes, the header and info header sizes respectively. This would put the offset at 54 bytes or `0x36`. [^2]
 
 ![](attachments/tunn3l_v1s10n_false_flag_correct_offset.png)
 
-Using `exiftool` on the uncorrupted file, we can observe the image resolution and file size discrepency.
+Using `exiftool` on the uncorrupted file, we can observe the image resolution and file size discrepancy.
 
 > **Note** In this version of exiftool, we get the File Size in `MiB` (Mebibytes) as default. (This is changed in the [version 12.42](https://exiftool.org/history.html), so instead we can use the `-n` flag to output the File Size in `B` (bytes))
 
@@ -127,10 +126,14 @@ $ hexdump tunn3l_v1s10n.bmp | head -n 2
 0000010 0000 046e 0000 0352 0000 0001 0018 0000
 ```
 
+
+![](attachments/tunn3l_v1s10n_complete.png)
+
 And we have the flag.
 
 ```
-picoCTF{qu1t3_a_v13w_2020}`.
+picoCTF{qu1t3_a_v13w_2020}
 ```
 
-![](attachments/tunn3l_v1s10n_complete.png)
+[^1]: https://asecuritysite.com/forensics/bmp?file=activated.bmp
+[^2]: http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm

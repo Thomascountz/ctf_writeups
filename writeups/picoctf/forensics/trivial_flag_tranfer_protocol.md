@@ -13,14 +13,14 @@ summary: Used Wireshark to inspect and download six files trasferred via TFTP. T
 
 > Figure out how they moved the flag
 
-The file is a large (`50MB`) PcapNg, which we've seen in [wireshark_doo_dooo_do_doo](wireshark_doo_dooo_do_doo.md).
+We're given a large large (`50MB`) PcapNg file that we can open immediately in Wireshark.
 
 There are a lot of TFTP (_Trivial_ File Transfer Protocol) streams.
 
 > Overview of the Protocol
 > Any transfer begins with a request to read or write a file, which also serves to request a connection.  If the server grants the request, the connection is opened and the file is sent in fixed length blocks of 512 bytes.  Each data packet contains one block of data, and must be acknowledged by an acknowledgment packet before the next packet can be sent.  A data packet of less than 512 bytes signals termination of a transfer... Notice that both machines involved in a transfer are considered senders and receivers.  One sends data and receives acknowledgments, the other sends acknowledgments and receives data. [^1]
 
-Let's look at the first stream.
+Let's look at the first series of streams.
 
 | No. | Time        | Source      | Destination | Protocol | Length | Info                                                        |
 | --- | ----------- | ----------- | ----------- | -------- | ------ | ----------------------------------------------------------- |
@@ -29,7 +29,7 @@ Let's look at the first stream.
 | 3   | 0.000312738 | 10.10.10.11 | 10.10.10.12 | TFTP     | 159    | Data Packet, Block: 1 (last)                                |
 | 4   | 0.000111406 | 10.10.10.12 | 10.10.10.11 | TFTP     | 46     | Acknowledgement, Block: 1                                   |
 
-Here, we see (1) the request to write a file called `instructions.txt`, which "...also serves to request a connection" to `10.10.10.12` from `10.10.10.11`.  (2) That packet is acknowledge, and the connection is established. (3) Then a one block data packet is sent of size `159b`, which is less than `512b`, so it also signals the termination of the transfer. (4) The stream ends with a final acknowledgement packet.
+Here, we see the request to write a file called `instructions.txt`, which "...also serves to request a connection" to `10.10.10.12` from `10.10.10.11` (1).  That packet is acknowledge, and the connection is established (2). Then a one block data packet is sent of size `159b`, which is less than `512b`, so it also signals the termination of the transfer (3). The stream ends with a final acknowledgement packet (4).
 
 Let's take a look at the data that was transferred in the data packet.
 
@@ -53,7 +53,7 @@ We're interested in just the "...remainder of the TFTP packet", which here shows
 > **Note**
 > We can also see TFTP opcode (`03` for DATA) and block number (`01`) in the TFTP in bytes `42-46`
 
-Let's see what those ASCII characters are using dcode.fr's cypher identifier.
+Let's see what those ASCII characters are using [dcode.fr](https://www.dcode.fr/en)'s cypher identifier.
 
 We get a hit for our friend, ROT13!
 
@@ -74,7 +74,7 @@ Sure enough, we see read file requests followed by errors of opcode `01` - File 
 
 > An ERROR packet can be the acknowledgment of any other type of packet. The error code is an integer indicating the nature of the error. [^1]
 
-Then, we see another read request for `plan`, only this time, it's followed by an `Data Packet` response, an `Acknowledgement`, a request to read `program.deb`, and then hundreds of blocks of data packets and acknowledgements...
+Then, we see another read request for `plan`, only this time, it's followed by a `Data Packet` response, an `Acknowledgement`, a request to read `program.deb`, and then hundreds of blocks of data packets and acknowledgements...
 
 | No.    | Time         | Source      | Destination | Protocol | Length | Info                                                  |
 | ------ | ------------ | ----------- | ----------- | -------- | ------ | ----------------------------------------------------- |
@@ -87,7 +87,7 @@ Then, we see another read request for `plan`, only this time, it's followed by a
 | n      | 0.000122046  | 10.10.10.12 | 10.10.10.11 | TFTP     | 558    | Data Packet, Block: n                                 |
 | n      | 0.000237184  | 10.10.10.11 | 10.10.10.12 | TFTP     | 60     | Acknowledgement, Block: n                             |
 
-Let's try to see what the `plan` was, i.e., what's in the data packet response?
+Let's try to see what the `plan` was, i.e. what's in the data packet response?
 
 ```
 0000   00 0c 29 79 6b b3 00 0c 29 66 7b ee 08 00 45 00   ..)yk...)f{...E.
@@ -114,9 +114,13 @@ Let's take a look at the rest of the requests.
 | 3790   | 3.727568743 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture2.bmp, Transfer type: octet |
 | 146683 | 2.818313205 | 10.10.10.11 | 10.10.10.12 | TFTP     | 63     | Read Request, File: picture3.bmp, Transfer type: octet |
 
-We see the request from earlier to `program.deb`, and then we see three `bmp` photo files. All of them are transferred without error.
+We see the request from earlier for the `program.deb` file, and then we see three requests for `bmp` image files. All of them are transferred without error.
 
-With Wireshark, you can extract/export objects transferred via different protocols. For use, we can extract TFTP objects to download the six files that we transferred.
+With Wireshark, we can extract/export/download objects transferred via different protocols. For us, we can extract TFTP objects to download the six files that we transferred.
+
+```
+File -> Export Objects -> TFTP...
+```
 
 ![](./attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
 
@@ -124,7 +128,7 @@ The `plan` said "IUSEDTHEPROGRAM..." so let's find out what `program.deb` is.
 
 > A DEB file is a software package used by the Debian [Linux](https://techterms.com/definition/linux) distribution and its variants, such as Ubuntu. DEB files are used primarily to install or update [Unix](https://techterms.com/definition/unix) applications. [^2]
 
-We can use the tool `dpkg-deb` to do things like inspect the file contents, extract them, and list information about the package.
+We can use the tool `dpkg-deb` to do things like inspect the file contents, extract their contents, and list metadata about the package.
 
 ```shell
 $ dpkg --info program.deb 
@@ -152,7 +156,7 @@ $ dpkg --info program.deb
   in the container data.
 ```
 
-Ok! I already have `steghide` installed (and even if I didn't, I wouldn't trust installing it using this `.deb` package), so let's see what happens when we run it on `.bmp` files.
+Ok! We already have `steghide` installed (and even if we didn't, I wouldn't trust installing it using this `.deb` package), so let's see what happens when we run it on `.bmp` files.
 
 ```shell
 $ steghide extract -sf picture1.bmp 

@@ -160,17 +160,17 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "7dd235dbfccbc72e",
+  "active": "0c1f37526f2167fb",
   "lastOpenFiles": [
-    "writeups/picoctf/forensics/macrohard_weakedge.md",
-    "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
-    "reference/Resources.md",
-    "writeups/picoctf/forensics/glory_in_the_garden.md",
-    "templates/_picoctf.md",
-    "writeups/picoctf/forensics/matryoshka_doll.md",
     "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
     "writeups/picoctf/forensics/tunn3l_v1s10n.md",
+    "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
+    "writeups/picoctf/forensics/matryoshka_doll.md",
+    "writeups/picoctf/forensics/macrohard_weakedge.md",
+    "writeups/picoctf/forensics/glory_in_the_garden.md",
     "writeups/picoctf/forensics/information.md",
-    "Untitled.md"
+    "reference/magic_bytes.md",
+    "reference/Resources.md",
+    "templates/_picoctf.md"
   ]
 }

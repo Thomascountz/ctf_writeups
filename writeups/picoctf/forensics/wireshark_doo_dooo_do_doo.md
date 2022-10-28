@@ -13,7 +13,7 @@ summary: Used wireshark to follow an unencrypted TCP trace in a PcapNg file that
 
 > Can you find the flag? shark1.pcapng.
 
-PcapNg (the file extension) is a PCAP Next Generation Dump File Format to overcome the limitations of the libpcap format. [source](https://wiki.wireshark.org/Development/PcapNg)
+PcapNg (the file extension) is a PCAP Next Generation Dump File Format to overcome the limitations of the libpcap format. [^1]
 
 [The top tool for PCAP analysis is Wireshark](https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis), and PcapNg can be opened without conversion in Wireshark, too.
 
@@ -24,7 +24,7 @@ There are some [suggested filters](https://book.hacktricks.xyz/generic-methodolo
 http.response.code == 200
 ```
 
-After doing so, we can see that all but two are `(application/http-kerberos-session-encrypted)`. Apparently, "Kerberos (/ˈkɜːrbərɒs/) is a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. Its designers aimed it primarily at a client–server model, and it provides mutual authentication—both the user and the server verify each other's identity." And most importantly: "...Kerberos protocol messages are protected against eavesdropping and replay attacks." [source](https://en.wikipedia.org/wiki/Kerberos_(protocol)).
+After doing so, we can see that all but two are `(application/http-kerberos-session-encrypted)`. Apparently, "Kerberos (/ˈkɜːrbərɒs/) is a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. Its designers aimed it primarily at a client–server model, and it provides mutual authentication—both the user and the server verify each other's identity." And most importantly: "...Kerberos protocol messages are protected against eavesdropping and replay attacks." [^2] 
 
 So ignoring those for now, the other two streams are `(text/html)` and `(text/plain)`.
 
@@ -50,4 +50,5 @@ Sure enough, after decoding, we get the flag.
 The flag is picoCTF{p33kab00_1_s33_u_deadbeef}
 ```
 
-
+[^1]: https://wiki.wireshark.org/Development/PcapNg\
+[^2]: https://en.wikipedia.org/wiki/Kerberos_(protocol)
