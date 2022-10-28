@@ -1,8 +1,8 @@
 ---
 ctf: picoctf
 competition: false
-categories: forensics
-tools: wireshark, dcode-cipher-identifier, cyberchef
+categories: [forensics]
+tools: [wireshark, dcode-cipher-identifier, cyberchef]
 url: https://play.picoctf.org/practice/challenge/115
 captured: 2022-10-25
 flag: picoCTF{p33kab00_1_s33_u_deadbeef}

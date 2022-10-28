@@ -1,8 +1,8 @@
 ---
 ctf: picoctf
 competition: false
-categories: forensics
-tools: file, unzip, grep, oleid, olevba, base64
+categories: [forensics]
+tools: [file, unzip, grep, oleid, olevba, base64]
 url: https://play.picoctf.org/practice/challenge/130
 captured: 2022-10-26
 flag: picoCTF{D1d_u_kn0w_ppts_r_z1p5}

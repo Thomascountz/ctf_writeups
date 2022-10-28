@@ -1,8 +1,8 @@
 ---
 ctf: picoctf
 competition: false
-categories: forensics
-tools: exiftool, base64
+categories: [forensics]
+tools: [exiftool, base64]
 url: https://play.picoctf.org/practice/challenge/186
 captured: 2022-10-24
 flag: picoCTF{the_m3tadata_1s_modified}
