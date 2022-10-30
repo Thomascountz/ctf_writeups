@@ -2,7 +2,7 @@
 ctf: picoctf
 competition: false
 categories: [forensics]
-tools: [wireshark, dcode-cipher-identifier]
+tools: [wireshark, dcode-cipher-identifier, cyberchef]
 url: https://play.picoctf.org/practice/challenge/110
 captured: 
 flag: 
@@ -87,4 +87,57 @@ There's a flag there!
 picoCTF{bfe48e8500c454d647c55a4471985e776a07b26cba64526713f43758599aa98b}
 ```
 
-Hmmm... That flag didn't work. Maybe it's encoded. Let's try [https://www.dcode.fr/](https://www.dcode.fr/cipher-identifier)
+Hmmm... That flag didn't work. Maybe it's encoded. Let's try [https://www.dcode.fr/](https://www.dcode.fr/cipher-identifier)].
+
+It looks like it's hexadecimal (this can be caught by eye by noticing there are only number `0`-`9` and letter `A`-`F`).
+
+Let's convert it.
+
+```
+¿ä...ÄTÖGÅZDq.^wj.²lºdRg.ô7XY.©.
+```
+
+Hmmm... That doesn't mean much to me and doesn't work as a flag either.
+
+Let's take a look at the next request.
+
+| No.  | Time     | Source      | Destination    | Protocol | Length | Info                         |
+| ---- | -------- | ----------- | -------------- | -------- | ------ | ---------------------------- |
+| 1550 | 0.000129 | 18.217.1.57 | 192.168.38.104 | HTTP     | 263    | HTTP/1.0 200 OK  (text/html) |
+
+```
+0000   02 3b c6 1a ae f5 02 fb 68 4c e9 41 08 00 45 00   .;......hL.A..E.
+0010   00 f9 45 6b 40 00 24 06 15 72 12 d9 01 39 c0 a8   ..Ek@.$..r...9..
+0020   26 68 00 50 f8 97 e7 34 dc 6e 38 18 04 50 50 19   &h.P...4.n8..PP.
+0030   01 e7 b6 96 00 00 43 6f 6e 74 65 6e 74 2d 54 79   ......Content-Ty
+0040   70 65 3a 20 74 65 78 74 2f 68 74 6d 6c 3b 20 63   pe: text/html; c
+0050   68 61 72 73 65 74 3d 75 74 66 2d 38 0d 0a 43 6f   harset=utf-8..Co
+0060   6e 74 65 6e 74 2d 4c 65 6e 67 74 68 3a 20 37 33   ntent-Length: 73
+0070   0d 0a 53 65 72 76 65 72 3a 20 57 65 72 6b 7a 65   ..Server: Werkze
+0080   75 67 2f 31 2e 30 2e 31 20 50 79 74 68 6f 6e 2f   ug/1.0.1 Python/
+0090   33 2e 36 2e 39 0d 0a 44 61 74 65 3a 20 4d 6f 6e   3.6.9..Date: Mon
+00a0   2c 20 31 30 20 41 75 67 20 32 30 32 30 20 30 31   , 10 Aug 2020 01
+00b0   3a 33 39 3a 32 33 20 47 4d 54 0d 0a 0d 0a 70 69   :39:23 GMT....pi
+00c0   63 6f 43 54 46 7b 62 64 61 36 39 62 64 66 38 66   coCTF{bda69bdf8f
+00d0   35 37 30 61 39 61 61 61 62 30 65 34 31 30 38 61   570a9aaab0e4108a
+00e0   30 66 61 35 66 36 34 63 62 32 36 62 61 37 64 32   0fa5f64cb26ba7d2
+00f0   32 36 39 62 62 36 33 66 36 38 61 66 35 64 39 38   269bb63f68af5d98
+0100   62 39 38 32 34 35 7d                              b98245}
+```
+
+Another flag!
+
+```
+picoCTF{bda69bdf8f570a9aaab0e4108a0fa5f64cb26ba7d2269bb63f68af5d98b98245}
+```
+
+Another false flag and nonsense once decoded from hexadecimal.
+
+```
+½¦ßW
+ª°ä¥öL²k§Ò&¶?h¯]¹E
+```
+
+Sure enough, they all seem to contain hexadecimal flags... Let's consider a way to automate decoding all of them.
+
+
