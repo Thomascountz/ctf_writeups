@@ -138,6 +138,13 @@ Another false flag and nonsense once decoded from hexadecimal.
 ª°ä¥öL²k§Ò&¶?h¯]¹E
 ```
 
-Sure enough, they all seem to contain hexadecimal flags... Let's consider a way to automate decoding all of them.
+Sure enough, they all seem to contain hexadecimal flags... 
+
+> **Note**
+> Let's make a note and consider a way to automate checking all of them if we don't find another lead.
+
+Let's return to our list of HTTP 200 streams.
+
+
 
 
