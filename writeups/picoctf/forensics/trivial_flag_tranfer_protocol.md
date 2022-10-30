@@ -122,7 +122,7 @@ With Wireshark, we can extract/export/download objects transferred via different
 File -> Export Objects -> TFTP...
 ```
 
-![](./attachments/Screen%20Shot%202022-10-27%20at%2011.13.43%20PM.png)
+![](writeups/picoctf/forensics/attachments/tftppcapng_export.png)
 
 The `plan` said "IUSEDTHEPROGRAM..." so let's find out what `program.deb` is.
 
