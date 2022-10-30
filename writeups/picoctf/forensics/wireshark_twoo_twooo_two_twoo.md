@@ -55,7 +55,7 @@ Let's look at the first occurance.
 
 > The official Red's Shrimp and Herring website is still under construction. Please check back later!
 
-"Check back later..." Let's look at the next request.
+"Check back later..." Let's look at the next request. This one is to an URI ending in `/flag`!
 
 |No.|Time    |Source      |Destination   |Protocol|Length|Info                        |
 |---|--------|-----------|--------------|--------|------|----------------------------|
