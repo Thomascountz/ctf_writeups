@@ -147,20 +147,20 @@ Let's return to our list of HTTP 200 filtered streams.
 
 If we scroll through the list, one stands out by being highlighted red by Wireshark.
 
-![](writeups/picoctf/forensics/attachments/shark2pcapng_highlight.png)
+![](./attachments/shark2pcapng_highlight.png)
 
 This is highlighted by Wireshark's "coloring rules." `View -> Coloring Rules...`
 
-![](writeups/picoctf/forensics/attachments/wireshark_coloring_rules.png)
+![](./attachments/wireshark_coloring_rules.png)
 
 It appears that this stream was flagged for "TTL low or unexpected."
 
-![](writeups/picoctf/forensics/attachments/shark2pcapng_ttl_1.png)
+![](./attachments/shark2pcapng_ttl_1.png)
 If we inspect the TTL for that stream, it appears to be set to `1` second, which has been flagged as a "Note."
 
 Let's look further into this stream.
 
-![](writeups/picoctf/forensics/attachments/shark2pcapng_short_ttl_stream.png)
+![](./attachments/shark2pcapng_short_ttl_stream.png)
 
 This appears to be a `PUT` request to a `/token` endpoint and the response seems to be a base64 encoded string (as inferred by the trailing `==`). The User-Agent refers to Golang AWS (Amazon Web Service) SDK (Software Development Kit), which implies this might be a request for a token to authenticate against an AWS service endpoint
 
