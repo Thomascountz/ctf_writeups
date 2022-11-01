@@ -196,15 +196,15 @@
   },
   "active": "98b9fb0369cc6c2a",
   "lastOpenFiles": [
-    "reference/Resources.md",
+    "writeups/picoctf/forensics/attachments/Screen Shot 2022-11-01 at 10.24.36 PM.png",
     "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
+    "reference/Resources.md",
     "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
     "writeups/picoctf/forensics/attachments/shark2pcapng_highlight.png",
     "writeups/picoctf/forensics/attachments/tftppcapng_export.png",
     "conflict-files-obsidian-git.md",
     "writeups/picoctf/forensics/macrohard_weakedge.md",
     "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
-    "writeups/picoctf/forensics/glory_in_the_garden.md",
-    "templates/_picoctf.md"
+    "writeups/picoctf/forensics/glory_in_the_garden.md"
   ]
 }

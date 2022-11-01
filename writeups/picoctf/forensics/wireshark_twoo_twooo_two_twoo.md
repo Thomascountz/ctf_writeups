@@ -87,7 +87,7 @@ There's a flag there!
 picoCTF{bfe48e8500c454d647c55a4471985e776a07b26cba64526713f43758599aa98b}
 ```
 
-Hmmm... That flag didn't work. Maybe it's encoded. Let's try [https://www.dcode.fr/](https://www.dcode.fr/cipher-identifier)].
+Hmmm... That flag didn't work. Maybe it's encoded. Let's try [https://www.dcode.fr/](https://www.dcode.fr/cipher-identifier).
 
 It looks like it's hexadecimal (this can be caught by eye by noticing there are only number `0`-`9` and letter `A`-`F`).
 
@@ -234,3 +234,10 @@ picoCTF{c50d259a4e172fcb2eddbabeebd272473e4882b76c9efcd12c03ac04429d884a}
 
 It's at this point where I got stuck. These flags were red herrings (as evidenced by the "Red's Shrimp and Herring" play on words), but I didn't know where to turn to next.
 
+Turning to the CTF Checklist for Beginners page on PCAP Analysis[^1], the step after 1) understand the packets and 2) export objects, is 3) protocol hierarchy give you general understanding [sic]. So let's take a look and see what we can understand.
+
+![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
+
+Here
+
+[^1]: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis

@@ -8,6 +8,6 @@
   "promptDelete": false,
   "attachmentFolderPath": "./attachments",
   "showUnsupportedFiles": false,
-  "newLinkFormat": "absolute",
+  "newLinkFormat": "relative",
   "readableLineLength": false
 }
