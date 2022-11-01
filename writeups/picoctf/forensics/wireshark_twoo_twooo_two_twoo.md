@@ -238,6 +238,6 @@ Turning to the CTF Checklist for Beginners page on PCAP Analysis[^1], the step a
 
 ![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
 
-Here
+So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. More than HTTP traffic is DNS traffic at `29.5%`
 
 [^1]: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis
