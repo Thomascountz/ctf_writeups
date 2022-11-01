@@ -234,6 +234,12 @@ picoCTF{c50d259a4e172fcb2eddbabeebd272473e4882b76c9efcd12c03ac04429d884a}
 
 It's at this point where I got stuck. These flags were red herrings (as evidenced by the "Red's Shrimp and Herring" play on words), but I didn't know where to turn to next.
 
+---
+
+After reviewing a few writeups, I've learned that this CTF involves DNS exfiltration.
+
+> 
+
 Turning to the CTF Checklist for Beginners page on PCAP Analysis[^1], the step after 1) understand the packets and 2) export objects, is 3) protocol hierarchy give you general understanding [sic]. So let's take a look and see what we can understand.
 
 ![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
