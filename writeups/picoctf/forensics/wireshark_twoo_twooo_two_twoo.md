@@ -232,6 +232,5 @@ picoCTF{3fe0b2788f30d9cb9f77d3b2752f13c554fe7f0e7a2883e57c8a44b34f35675c}
 picoCTF{c50d259a4e172fcb2eddbabeebd272473e4882b76c9efcd12c03ac04429d884a}
 ```
 
-This is where I got a bit stuck. These flags were red herrings (as evidenced by the "Red's Shrimp and Herring" play on words). 
+It's at this point where I got stuck. These flags were red herrings (as evidenced by the "Red's Shrimp and Herring" play on words), but I didn't know where to turn to next.
 
-There are other streams logged in the PcapNg file, but what about requests fro
