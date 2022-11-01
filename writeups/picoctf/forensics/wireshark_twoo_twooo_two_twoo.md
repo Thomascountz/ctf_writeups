@@ -246,7 +246,7 @@ Turning to the CTF Checklist for Beginners page on PCAP Analysis[^2], the step a
 
 So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. More than HTTP traffic is DNS traffic at `29.5%`
 
-If we filter for `dns` packets, we can see all of them are `A` record queries for `*.reddshrimpandherring.com.windomain.local` and `*.reddshrimpandherring.com`.
+If we filter for `dns` packets, we can see all of them are `A` record queries for `*.reddshrimpandherring.com.windomain.local`, `*.reddshrimpandherring.com`, and `*.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com`.
 
 
 
