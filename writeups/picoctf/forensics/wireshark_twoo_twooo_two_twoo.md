@@ -29,7 +29,7 @@ But there's also a series of plaintext traffic to and from the same destination 
 | --- | -------- | ----------- | -------------- | -------- | ------ | ---------------------------- |
 | 57  | 0.000116 | 18.217.1.57 | 192.168.38.104 | HTTP     | 289    | HTTP/1.0 200 OK  (text/html) |
 
-Let's look at the first occurance.
+Let's look at the first occurrence.
 
 ```
 0000   02 3b c6 1a ae f5 02 fb 68 4c e9 41 08 00 45 00   .;......hL.A..E.
