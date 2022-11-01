@@ -238,12 +238,13 @@ It's at this point where I got stuck. These flags were red herrings (as evidence
 
 After reviewing a few writeups, I've learned that this CTF involves DNS exfiltration.
 
-> 
+> From a high level simplified point of view, the client wants to send data to server. It will encode that data in the DNS payload. For example the client could send an `A` record request where the data is encoded the in host name: `MRZGS3TLEBWW64TFEBXXMYLMORUW4ZI.t.example.com`. The server could respond with an answer as a `CNAME` response: `NVWW2IDPOZQWY5DJNZSQ.t.example.com`. In this way any data can be encoded and sent to the server. [^1]
 
-Turning to the CTF Checklist for Beginners page on PCAP Analysis[^1], the step after 1) understand the packets and 2) export objects, is 3) protocol hierarchy give you general understanding [sic]. So let's take a look and see what we can understand.
+Turning to the CTF Checklist for Beginners page on PCAP Analysis[^2], the step after 1) understand the packets and 2) export objects, is 3) protocol hierarchy give you general understanding [sic]. So let's take a look and see what we can understand.
 
 ![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
 
 So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. More than HTTP traffic is DNS traffic at `29.5%`
 
-[^1]: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis
+[^1]: https://sansorg.egnyte.com/dl/r4ouqZy5dp
+[^2]: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis
