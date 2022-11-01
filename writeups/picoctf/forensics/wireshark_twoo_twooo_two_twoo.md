@@ -140,25 +140,4 @@ Another false flag and nonsense once decoded from hexadecimal.
 
 Sure enough, they all seem to contain false hexadecimal flags... 
 
-Let's return to our list of HTTP 200 filtered streams.
 
-If we scroll through the list, one stands out by being highlighted red by Wireshark.
-
-![](./attachments/shark2pcapng_highlight.png)
-
-This is highlighted by Wireshark's "coloring rules." `View -> Coloring Rules...`
-
-![](./attachments/wireshark_coloring_rules.png)
-
-It appears that this stream was flagged for "TTL low or unexpected."
-
-![](./attachments/shark2pcapng_ttl_1.png)
-If we inspect the TTL for that stream, it appears to be set to `1` second, which has been flagged as a "Note."
-
-Let's look further into this stream.
-
-![](./attachments/shark2pcapng_short_ttl_stream.png)
-
-This appears to be a `PUT` request to a `/token` endpoint and the response seems to be a base64 encoded string (as inferred by the trailing `==`). The User-Agent refers to Golang AWS (Amazon Web Service) SDK (Software Development Kit), which implies this might be a request for a token to authenticate against an AWS service endpoint
-
-Let's decode the string it to see if it tells us anything.
