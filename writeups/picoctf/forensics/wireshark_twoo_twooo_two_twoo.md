@@ -140,8 +140,6 @@ Another false flag and nonsense once decoded from hexadecimal.
 
 Sure enough, they all seem to contain false hexadecimal flags... 
 
-
-
 Let's return to our list of HTTP 200 filtered streams.
 
 If we scroll through the list, one stands out by being highlighted red by Wireshark.
