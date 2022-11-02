@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
+                "file": "templates/_picoctf.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "dcode",
+                "query": "picoctf",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +102,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -122,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
+                "file": "templates/_picoctf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
+                "file": "templates/_picoctf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md"
+                "file": "templates/_picoctf.md"
               }
             }
           },
@@ -182,12 +183,12 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7dd235dbfccbc72e",
+  "active": "98b9fb0369cc6c2a",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
     "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md",
     "writeups/picoctf_gym/trivial_flag_tranfer_protocol.md",
     "writeups/picoctf_gym/macrohard_weakedge.md",
-    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
     "writeups/picoctf_gym/attachments/Screen Shot 2022-11-01 at 10.24.36 PM.png",
     "reference/Resources.md",
     "writeups/picoctf_gym/attachments/shark2pcapng_highlight.png",
