@@ -246,7 +246,11 @@ Turning to the CTF Checklist for Beginners page on PCAP Analysis[^2], the step a
 
 So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. More than HTTP traffic is DNS traffic at `29.5%`
 
-If we filter for `dns` packets, we can see all of them are `A` record queries for `*.reddshrimpandherring.com.windomain.local`, `*.reddshrimpandherring.com`, and `*.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com`, where `*` seems to be a string of random characters.
+If we filter for `dns` packets, we can see all of them are `A` record queries repeated for `*.reddshrimpandherring.com.windomain.local`, `*.reddshrimpandherring.com`, and `*.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com`, where `*` is a string of random characters. All responses are `No such name A...`. 
+
+This is a signature of DNS exfiltration. Each of the random strings represents a (possibly encoded) piece of the data the attacker is trying to exfiltrate.
+
+Let's collect all of the random strings.
 
 
 
