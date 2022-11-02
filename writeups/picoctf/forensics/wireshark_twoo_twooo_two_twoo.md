@@ -4,9 +4,9 @@ competition: false
 categories: [forensics]
 tools: [wireshark, dcode-cipher-identifier, cyberchef, vim]
 url: https://play.picoctf.org/practice/challenge/110
-captured: 
-flag: 
-summary:
+captured: 2022-11-02
+flag: picoCTF{dns_3xf1l_ftw_deadbeef}
+summary: Use Wireshark to sift through red herrings and identify DNS exfiltration traffic which divided the base64 encoded flag in the subdomain of six unique DNS ANAME queries.
 ---
 
 > Can you find the flag? shark2.pcapng.
@@ -244,20 +244,56 @@ Turning to the CTF Checklist for Beginners page on PCAP Analysis[^2], the step a
 
 ![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
 
-So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. More than HTTP traffic is DNS traffic at `29.5%`
+So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. However, more than HTTP traffic is DNS traffic at `29.5%`
 
-If we filter for `dns` packets, we can see all of them are `A` record queries repeated for `*.reddshrimpandherring.com.windomain.local`, `*.reddshrimpandherring.com`, and `*.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com`, where `*` is a string of random characters. All responses are `No such name A...`. 
+If we filter for `dns` packets, we can see all of them are `ANAME` record queries repeated for `*.reddshrimpandherring.com.windomain.local`, `*.reddshrimpandherring.com`, and `*.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com`, where `*` is a string of random characters representing a subdomain. All responses are `No such name A...`. 
 
-This is a signature of DNS exfiltration. Each of the random strings represents a (possibly encoded) piece of the data the attacker is trying to exfiltrate.
+This is a signature of DNS exfiltration. Each of the random strings represents a (possibly encoded) piece of the data the attacker is trying to exfiltrate using DNS queries to circumvent firewall protections.
 
-Let's collect all of the random strings and remove duplicates.
+Most of the queries are to Google's `8.8.8.8` Public DNS[^3]. Our attacker wouldn't have access to those logs and, therefore wouldn't be able to piece the data back together, so those queries can be filtered out.
+
+Once we remove those queries, we're left with 21 queries to `ip.dst == 18.217.1.57`, which we can assume is our attackers DNS.
+
+|No. |Time     |Source        |Destination|Protocol|Length|Info                                                                                           |
+|----|---------|--------------|-----------|--------|------|-----------------------------------------------------------------------------------------------|
+|1633|9.334169 |192.168.38.104|18.217.1.57|DNS     |93    |Standard query 0xdf26 A cGljb0NU.reddshrimpandherring.com                                      |
+|1635|9.389117 |192.168.38.104|18.217.1.57|DNS     |131   |Standard query 0xa12d A cGljb0NU.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com|
+|1637|9.440363 |192.168.38.104|18.217.1.57|DNS     |109   |Standard query 0x1dd2 A cGljb0NU.reddshrimpandherring.com.windomain.local                      |
+|2042|11.870534|192.168.38.104|18.217.1.57|DNS     |93    |Standard query 0x3a30 A RntkbnNf.reddshrimpandherring.com                                      |
+|2044|11.922284|192.168.38.104|18.217.1.57|DNS     |131   |Standard query 0xec57 A RntkbnNf.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com|
+|2046|11.972605|192.168.38.104|18.217.1.57|DNS     |109   |Standard query 0xabb9 A RntkbnNf.reddshrimpandherring.com.windomain.local                      |
+|2444|14.503146|192.168.38.104|18.217.1.57|DNS     |93    |Standard query 0x531d A M3hmMWxf.reddshrimpandherring.com                                      |
+|2446|14.554475|192.168.38.104|18.217.1.57|DNS     |131   |Standard query 0x3bd6 A M3hmMWxf.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com|
+|2448|14.605726|192.168.38.104|18.217.1.57|DNS     |109   |Standard query 0x9e21 A M3hmMWxf.reddshrimpandherring.com.windomain.local                      |
+|3140|16.404809|192.168.38.104|18.217.1.57|DNS     |93    |Standard query 0x99dd A ZnR3X2Rl.reddshrimpandherring.com                                      |
+|3144|16.456229|192.168.38.104|18.217.1.57|DNS     |131   |Standard query 0x028b A ZnR3X2Rl.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com|
+|3153|16.506492|192.168.38.104|18.217.1.57|DNS     |109   |Standard query 0x2ee1 A ZnR3X2Rl.reddshrimpandherring.com.windomain.local                      |
+|3429|18.239530|192.168.38.104|18.217.1.57|DNS     |93    |Standard query 0x16f6 A YWRiZWVm.reddshrimpandherring.com                                      |
+|3434|18.289828|192.168.38.104|18.217.1.57|DNS     |131   |Standard query 0xe7cb A YWRiZWVm.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com|
+|3442|18.340155|192.168.38.104|18.217.1.57|DNS     |109   |Standard query 0x2a4b A YWRiZWVm.reddshrimpandherring.com.windomain.local                      |
+|3969|20.266171|192.168.38.104|18.217.1.57|DNS     |89    |Standard query 0xbe68 A fQ\==.reddshrimpandherring.com                                          |
+|3973|20.317649|192.168.38.104|18.217.1.57|DNS     |127   |Standard query 0xbaee A fQ\==.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com    |
+|3982|20.369626|192.168.38.104|18.217.1.57|DNS     |105   |Standard query 0x4068 A fQ\==.reddshrimpandherring.com.windomain.local                          |
+|4361|22.481648|192.168.38.104|18.217.1.57|DNS     |89    |Standard query 0xa740 A fQ\==.reddshrimpandherring.com                                          |
+|4365|22.533184|192.168.38.104|18.217.1.57|DNS     |127   |Standard query 0x683a A fQ\==.reddshrimpandherring.com.us-west-1.ec2-utilities.amazonaws.com    |
+|4374|22.583745|192.168.38.104|18.217.1.57|DNS     |105   |Standard query 0x7418 A fQ\==.reddshrimpandherring.com.windomain.local                          |
+
+These 21 queries seem to represent 6 unique subdomain strings.
+
+Let's collect them and remove the duplicates.
 
 ```
-
+cGljb0NURntkbnNfM3hmMWxfZnR3X2RlYWRiZWVmfQ==
 ```
 
+This is a base64 encoded string!
 
+```bash
+$ echo "cGljb0NURntkbnNfM3hmMWxfZnR3X2RlYWRiZWVmfQ==" | base64 -d
+picoCTF{dns_3xf1l_ftw_deadbeef}
+```
 
 
 [^1]: https://sansorg.egnyte.com/dl/r4ouqZy5dp
 [^2]: https://fareedfauzi.gitbook.io/ctf-checklist-for-beginner/pcap-analysis
+[^3]: https://developers.google.com/speed/public-dns
