@@ -1,5 +1,5 @@
 ---
-ctf: picoctf
+ctf: picoctf_gym
 competition: false
 categories: [forensics]
 tools: [wireshark, dcode-cypher-identifier, dpkg-deb, steghide]
@@ -122,7 +122,7 @@ With Wireshark, we can extract/export/download objects transferred via different
 File -> Export Objects -> TFTP...
 ```
 
-![](attachments/tftppcapng_export.png)
+![](./attachments/tftppcapng_export.png)
 
 The `plan` said "IUSEDTHEPROGRAM..." so let's find out what `program.deb` is.
 

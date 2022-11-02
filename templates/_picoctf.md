@@ -1,5 +1,5 @@
 ---
-ctf: picoctf
+ctf: picoctf_gym
 competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation]
 tools:

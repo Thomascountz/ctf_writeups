@@ -1,5 +1,5 @@
 ---
-ctf: picoctf
+ctf: picoctf_gym
 competition: false
 categories: [forensics]
 tools: [exiftool, strings, png-file-chunck-inspector, cyberchef, unzip]

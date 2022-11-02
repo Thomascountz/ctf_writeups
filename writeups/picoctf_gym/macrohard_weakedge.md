@@ -1,5 +1,5 @@
 ---
-ctf: picoctf
+ctf: picoctf_gym
 competition: false
 categories: [forensics]
 tools: [file, unzip, grep, oleid, olevba, base64]

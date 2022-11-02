@@ -1,5 +1,5 @@
 ---
-ctf: picoctf
+ctf: picoctf_gym
 competition: false
 categories: [forensics]
 tools: [wireshark, dcode-cipher-identifier, cyberchef, vim]
@@ -242,7 +242,7 @@ After reviewing a few writeups, I've learned that this CTF involves DNS exfiltra
 
 Turning to the CTF Checklist for Beginners page on PCAP Analysis[^2], the step after 1) understand the packets and 2) export objects, is 3) protocol hierarchy give you general understanding [sic]. So let's take a look and see what we can understand.
 
-![](attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
+![](./attachments/Screen%20Shot%202022-11-01%20at%2010.24.36%20PM.png)
 
 So far, we've only concerned ourselves with HTTP traffic, which `15.6%` all packets in this capture. However, more than HTTP traffic is DNS traffic at `29.5%`
 
