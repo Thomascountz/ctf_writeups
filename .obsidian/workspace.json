@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
+                "file": "writeups/picoctf_gym/trivial_flag_tranfer_protocol.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf/forensics/macrohard_weakedge.md",
+                "file": "writeups/picoctf_gym/macrohard_weakedge.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
+                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
+                "file": "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,8 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 280.5,
-    "collapsed": true
+    "width": 280.5
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
+                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
+                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md"
+                "file": "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md"
               }
             }
           },
@@ -183,17 +182,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "98b9fb0369cc6c2a",
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
-    "writeups/picoctf/forensics/wireshark_doo_dooo_do_doo.md",
-    "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
-    "writeups/picoctf/forensics/macrohard_weakedge.md",
-    "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
-    "writeups/picoctf/forensics/attachments/Screen Shot 2022-11-01 at 10.24.36 PM.png",
+    "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md",
+    "writeups/picoctf_gym/trivial_flag_tranfer_protocol.md",
+    "writeups/picoctf_gym/macrohard_weakedge.md",
+    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
+    "writeups/picoctf_gym/attachments/Screen Shot 2022-11-01 at 10.24.36 PM.png",
     "reference/Resources.md",
-    "writeups/picoctf/forensics/attachments/shark2pcapng_highlight.png",
-    "writeups/picoctf/forensics/attachments/tftppcapng_export.png",
+    "writeups/picoctf_gym/attachments/shark2pcapng_highlight.png",
+    "writeups/picoctf_gym/attachments/tftppcapng_export.png",
     "conflict-files-obsidian-git.md",
-    "writeups/picoctf/forensics/glory_in_the_garden.md"
+    "writeups/picoctf_gym/glory_in_the_garden.md"
   ]
 }
