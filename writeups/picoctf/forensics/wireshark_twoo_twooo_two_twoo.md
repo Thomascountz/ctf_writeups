@@ -2,7 +2,7 @@
 ctf: picoctf
 competition: false
 categories: [forensics]
-tools: [wireshark, dcode-cipher-identifier, cyberchef]
+tools: [wireshark, dcode-cipher-identifier, cyberchef, vim]
 url: https://play.picoctf.org/practice/challenge/110
 captured: 
 flag: 
@@ -250,7 +250,11 @@ If we filter for `dns` packets, we can see all of them are `A` record queries re
 
 This is a signature of DNS exfiltration. Each of the random strings represents a (possibly encoded) piece of the data the attacker is trying to exfiltrate.
 
-Let's collect all of the random strings.
+Let's collect all of the random strings and remove duplicates.
+
+```
+
+```
 
 
 
