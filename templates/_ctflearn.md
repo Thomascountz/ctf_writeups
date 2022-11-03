@@ -2,7 +2,7 @@
 ctf: ctflearn
 competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation, programming]
-tools:
+tools: []
 url: https://ctflearn.com/challenge/XXX
 captured: 
 flag: 
