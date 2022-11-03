@@ -44,6 +44,18 @@
             }
           },
           {
+            "id": "d651e5877f02009a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/ctflearn/Untitled.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "c8d983803a2d6687",
             "type": "leaf",
             "state": {
@@ -64,7 +76,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -130,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "templates/_ctflearn.md",
+                "file": "writeups/ctflearn/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "templates/_ctflearn.md",
+                "file": "writeups/ctflearn/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "templates/_ctflearn.md"
+                "file": "writeups/ctflearn/Untitled.md"
               }
             }
           },
@@ -190,8 +202,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7dd235dbfccbc72e",
+  "active": "d651e5877f02009a",
   "lastOpenFiles": [
+    "templates/_ctflearn.md",
+    "templates/_picoctf.md",
     "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md",
     "writeups/picoctf/forensics/attachments/Screen Shot 2022-11-01 at 10.24.36 PM.png",
     "reference/Resources.md",
@@ -199,8 +213,6 @@
     "writeups/picoctf/forensics/attachments/shark2pcapng_highlight.png",
     "writeups/picoctf/forensics/attachments/tftppcapng_export.png",
     "conflict-files-obsidian-git.md",
-    "writeups/picoctf/forensics/macrohard_weakedge.md",
-    "writeups/picoctf/forensics/trivial_flag_tranfer_protocol.md",
-    "writeups/picoctf/forensics/glory_in_the_garden.md"
+    "writeups/picoctf/forensics/macrohard_weakedge.md"
   ]
 }
