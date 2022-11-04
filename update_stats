@@ -6,6 +6,7 @@ if File.exist?("./ctf.db") && ENV.fetch("DROP", false) == "true"
 end
 
 require "bundler/inline"
+require "date"
 
 gemfile do
   source "https://rubygems.org"
@@ -24,9 +25,11 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Schema.define do
   create_table :writeups, if_not_exists: true do |table|
+    table.references :ctf, null: false
     table.text :name, null: false
     table.text :url, null: false
-    table.boolean :captured, default: false
+    table.timestamp :captured
+    table.boolean :competition, default: false
     table.text :flag
     table.text :summary
     table.timestamps
@@ -53,20 +56,19 @@ ActiveRecord::Schema.define do
     table.timestamps
   end
 
-  create_join_table :writeups, :ctfs, if_not_exists: true
   create_join_table :writeups, :tools, if_not_exists: true
   create_join_table :writeups, :categories, if_not_exists: true
 end
 
 class Writeup < ActiveRecord::Base
-  has_and_belongs_to_many :ctfs, class_name: :CTF
+  belongs_to :ctf, class_name: :CTF
   has_and_belongs_to_many :tools
   has_and_belongs_to_many :categories
 end
 
 class CTF < ActiveRecord::Base
   self.table_name = :ctfs
-  has_and_belongs_to_many :writeups
+  has_many :writeups
 end
 
 class Tool < ActiveRecord::Base
@@ -77,5 +79,31 @@ class Category < ActiveRecord::Base
   has_and_belongs_to_many :writeups
 end
 
-dir = Dir["./writeups/**/*.md"]
+files = Dir["./writeups/**/*.md"]
+files.each do |file|
+  front_matter = FrontMatterParser::Parser.parse_file(
+    file,
+    loader: FrontMatterParser::Loader::Yaml.new(allowlist_classes: [Date])
+  ).front_matter
+  ctf = CTF.find_or_create_by(name: front_matter["ctf"])
+  tools = front_matter["tools"].map do |tool|
+    Tool.find_or_initialize_by(name: tool)
+  end
+  categories = front_matter["categories"].map do |category|
+    Category.find_or_initialize_by(name: category)
+  end
+  writeup = Writeup.create(
+    ctf: ctf,
+    tools: tools,
+    categories: categories,
+    name: "file",
+    url: front_matter["url"],
+    captured: front_matter["captured"],
+    flag: front_matter["flag"],
+    competition: front_matter["competition"],
+    flag: front_matter["flag"],
+    summary: front_matter["summary"]
+  ).save!
+end
+
 binding.pry
