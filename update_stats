@@ -5,6 +5,8 @@ require 'bundler/inline'
 gemfile do
   source 'https://rubygems.org'
   gem 'front_matter_parser', require: true
+  gem 'pry', require: true
 end
 
-write
+dir = Dir["./writeups/**/*.md"]
+binding.pry
