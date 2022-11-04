@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics]
-tools: [hexdump, exiftool, hexdump, hexed.it]
+tools: [hexdump, exiftool, hexed.it]
 url: https://play.picoctf.org/practice/challenge/112
 captured: 2022-10-24
 flag: picoCTF{qu1t3_a_v13w_2020}

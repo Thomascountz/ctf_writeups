@@ -42,7 +42,7 @@ The response body contains a _somewhat_ familiar-looking string. Similar to the 
 Gur synt vf cvpbPGS{c33xno00_1_f33_h_qrnqorrs}
 ```
 
-Plugging this into [dcode cypher identifier](https://www.dcode.fr/cipher-identifier), we get a hit for ROT-13.
+Plugging this into [dcode cipher identifier](https://www.dcode.fr/cipher-identifier), we get a hit for ROT-13.
 
 Sure enough, after decoding, we get the flag.
 

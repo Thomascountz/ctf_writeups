@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics]
-tools: [wireshark, dcode-cypher-identifier, dpkg-deb, steghide]
+tools: [wireshark, dcode-cipher-identifier, dpkg-deb, steghide]
 url: https://play.picoctf.org/practice/challenge/103
 captured: 2022-10-27
 flag: picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
