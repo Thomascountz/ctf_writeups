@@ -1,37 +1,80 @@
 #!/usr/bin/env ruby
 
+if File.exist?("./ctf.db") && ENV.fetch("DROP", false) == "true"
+  File.delete("./ctf.db")
+  puts "===DELETED DB==="
+end
+
 require "bundler/inline"
 
 gemfile do
   source "https://rubygems.org"
 
-  gem 'activerecord', require: 'active_record'
+  gem "activerecord", require: "active_record"
   gem "front_matter_parser", require: true
   gem "pry", require: true
-  gem 'sqlite3', require: true
+  gem "sqlite3", require: true
 end
 
 ActiveRecord::Base.logger = Logger.new($stdout)
 ActiveRecord::Base.establish_connection(
   adapter: "sqlite3",
-  dbfile: "./ctf.db",
-  database: "writeups" 
+  database: "ctf.db"
 )
 
 ActiveRecord::Schema.define do
-  create_table :writeups do |table|
-    table.text :cft, null: false
+  create_table :writeups, if_not_exists: true do |table|
+    table.text :name, null: false
     table.text :url, null: false
     table.boolean :captured, default: false
     table.text :flag
     table.text :summary
     table.timestamps
   end
-  
-  create_table :cfts do |table|
+
+  create_table :ctfs, if_not_exists: true do |table|
     table.text :name, unique: true
+    table.text :description
+    table.text :url
     table.timestamps
   end
+
+  create_table :tools, if_not_exists: true do |table|
+    table.text :name, unique: true
+    table.text :description
+    table.text :url
+    table.timestamps
+  end
+
+  create_table :categories, if_not_exists: true do |table|
+    table.text :name, unique: true
+    table.text :description
+    table.text :url
+    table.timestamps
+  end
+
+  create_join_table :writeups, :ctfs, if_not_exists: true
+  create_join_table :writeups, :tools, if_not_exists: true
+  create_join_table :writeups, :categories, if_not_exists: true
+end
+
+class Writeup < ActiveRecord::Base
+  has_and_belongs_to_many :ctfs, class_name: :CTF
+  has_and_belongs_to_many :tools
+  has_and_belongs_to_many :categories
+end
+
+class CTF < ActiveRecord::Base
+  self.table_name = :ctfs
+  has_and_belongs_to_many :writeups
+end
+
+class Tool < ActiveRecord::Base
+  has_and_belongs_to_many :writeups
+end
+
+class Category < ActiveRecord::Base
+  has_and_belongs_to_many :writeups
 end
 
 dir = Dir["./writeups/**/*.md"]
