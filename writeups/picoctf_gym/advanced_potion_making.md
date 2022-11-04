@@ -55,9 +55,9 @@ To the naked eye, this looks to be a solid red image.
 
 There are a few tool we can use to check to see if this image really _is_ one solid color. Perhaps there's a watermark in a slightly different shade of red.
 
-I'll go over the three different approaches I found.
+I'll go over the three different approaches I found that all effectively do the same thing: isolate the different colors within the PNG.
 
-### Analyze the image color.
+### Analyze the image color using curves.
 
 _Note: I don't know the technical terms for some of these image processing techniques, so please forgive me._
 
@@ -65,6 +65,9 @@ If we squeeze the color range of the image within the narrow band of visible red
 
 ![](./attachments/advanced_potion_making_curves.png)
 
-### Use 
+### View color bit planes seperately
+
+A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which allows you to step through different 
 
 [^1]: http://www.libpng.org/pub/png/book/chapter08.html#png.ch08.div.2
+[^2]: 
