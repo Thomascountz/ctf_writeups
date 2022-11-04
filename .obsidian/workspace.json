@@ -184,15 +184,15 @@
   },
   "active": "6dd2064ea12fbb6e",
   "lastOpenFiles": [
-    "writeups/picoctf_gym/tunn3l_v1s10n.md",
-    "writeups/picoctf_gym/advanced_potion_making.md",
-    "writeups/ctflearn/forensics_101.md",
     "writeups/picoctf_gym/glory_in_the_garden.md",
-    "writeups/ctflearn/attachments/taking_ls_unlocked_pdf.png",
-    "writeups/ctflearn/attachments/taking_ls_locked_pdf.png",
-    "writeups/ctflearn/taking_ls.md",
-    "writeups/picoctf_gym/attachments/shark2_protocol_hierarchy.png",
-    "templates/_picoctf.md",
-    "templates/_ctflearn.md"
+    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
+    "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md",
+    "writeups/picoctf_gym/tunn3l_v1s10n.md",
+    "writeups/picoctf_gym/trivial_flag_tranfer_protocol.md",
+    "writeups/picoctf_gym/matryoshka_doll.md",
+    "writeups/picoctf_gym/macrohard_weakedge.md",
+    "writeups/picoctf_gym/information.md",
+    "writeups/picoctf_gym/advanced_potion_making.md",
+    "writeups/ctflearn/forensics_101.md"
   ]
 }

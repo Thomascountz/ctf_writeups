@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation]
-tools:[file, hexed.it, stegonline, aperisolve]
+tools: [file, hexed.it, stegonline, aperisolve]
 url: https://play.picoctf.org/practice/challenge/205
 captured: 2022-11-03
 flag: picoCTF{w1z4rdry}
