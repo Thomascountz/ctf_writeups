@@ -6,7 +6,7 @@ tools:[file, hexed.it, stegonline, aperisolve]
 url: https://play.picoctf.org/practice/challenge/205
 captured: 2022-11-03
 flag: picoCTF{w1z4rdry}
-summary: After fixing the magic bytes of a PNG file, we can discover the flag within the red layer by adjusting the image curves or by using a layer inspection tool
+summary: After fixing the magic bytes of a corrupted PNG file, we can discover the flag within the red layer by adjusting the image curves or by using a color plane inspection tool
 ---
 
 > Ron just found his own copy of advanced potion making, but its been corrupted by some kind of spell. Help him recover it!
@@ -55,7 +55,7 @@ To the naked eye, this looks to be a solid red image.
 
 There are a few tool we can use to check to see if this image really _is_ one solid color. Perhaps there's a watermark in a slightly different shade of red.
 
-I'll go over the three different approaches I found that all effectively do the same thing: isolate the different colors within the PNG.
+I'll go over the two different approaches I found that all effectively do the same thing: isolate the different colors within the PNG.
 
 ### Analyze the image color using curves.
 
@@ -65,16 +65,23 @@ If we squeeze the color range of the image within the narrow band of visible red
 
 ![](./attachments/advanced_potion_making_curves.png)
 
-### View color bit planes separately
+### Analyze color planes using tools.
 
-A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which allows you to step through different color "bit planes." You can also use the online versions, StegOnline[^3] or aperisolve[^4] , which does much the same thing.
+A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which allows you to step through different color "bit planes." You can also use the online versions, StegOnline[^3] or aperisolve[^4] , which do much the same thing.
 
 ![](attachments/advanced_potion_making_steg_online.png)
 The first bit plan (called `Red 0`) reveals the flag.
 
+A more refined technic is called LSB stenography. 
 
+LSB, or _Least Significant Bit_, stenography is a specific type of color manipulation in which one bit in the color encoding is modified independently.
+
+> LSB stands for Least Significant Bit. Each pixel in a PNG image is generally composed of RGB three primary colors (red, green, and blue), each color occupies 8 bits, and the value range is from '0x00' to '0xFF', so there are 256 colors. The total number of colors is equal to 256 to the third power or 16777216.[^5]
+
+In either case, we can see the `picoCTF{w1z4rdry}` flag hidden in the color information of the PNG.
 
 [^1]: http://www.libpng.org/pub/png/book/chapter08.html#png.ch08.div.2
 [^2]: https://github.com/zardus/ctf-tools/blob/master/stegsolve/install
 [^3]: https://stegonline.georgeom.net
 [^4]: https://www.aperisolve.com
+[^5]: https://ctf-wiki.mahaloz.re/misc/picture/png/#lsb
