@@ -102,8 +102,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -183,7 +182,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c02884df7a640f26",
+  "active": "6dd2064ea12fbb6e",
   "lastOpenFiles": [
     "writeups/picoctf_gym/tunn3l_v1s10n.md",
     "writeups/picoctf_gym/advanced_potion_making.md",
