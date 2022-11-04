@@ -53,6 +53,14 @@ Now we can open the image.
 
 To the naked eye, this looks to be a solid red image. 
 
+There are a few tool we can use to check to see if this image really _is_ one solid color. Perhaps there's a watermark in a slightly different shade of red.
+
+I'll go over the three different approaches I found.
+
+One is to analyze the image color curves.
+
+![](./attachments/advanced_potion_making_curves.png)
+
 - Fix png magic bytes
 	- pngcheck
 		- Online version: https://www.nayuki.io/page/png-file-chunk-inspector
