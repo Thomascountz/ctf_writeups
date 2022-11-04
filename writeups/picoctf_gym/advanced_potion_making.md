@@ -21,7 +21,7 @@ advanced-potion-making: data
 If we look at the [magic_bytes](../../reference/magic_bytes.md) in the hexdump, we can see—what appears to be—a corrupted PNG header as evidenced by the `IHDR` portion of the first 16 bytes.
 
 ```bash
-$ hexdump -C advanced-potion-making | head -1
+$ hexdump -C -n16 advanced-potion-making
 00000000  89 50 42 11 0d 0a 1a 0a  00 12 13 14 49 48 44 52  |.PB.........IHDR|
 ```
 
