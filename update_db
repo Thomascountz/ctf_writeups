@@ -31,6 +31,7 @@ ActiveRecord::Schema.define do
     table.boolean :competition, default: false
     table.text :flag
     table.text :summary
+    table.text :file
     table.timestamps
   end
 
@@ -96,6 +97,7 @@ files.each do |file|
     writeup.categories = categories
     writeup.competition = front_matter["competition"]
     writeup.ctf = ctf
+    writeup.file = file
     writeup.flag = front_matter["flag"]
     writeup.summary = front_matter["summary"]
     writeup.tools = tools
