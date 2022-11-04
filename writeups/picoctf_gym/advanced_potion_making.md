@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation]
-tools:[pngcheck, hexedit, stegonline, aperisolve]
+tools:[file, pngcheck, hexedit, stegonline, aperisolve]
 url: https://play.picoctf.org/practice/challenge/205
 captured: 2022-11-03
 flag: picoCTF{w1z4rdry}
@@ -11,14 +11,14 @@ summary: After fixing the magic bytes of a PNG file, we can discover the flag wi
 
 > Ron just found his own copy of advanced potion making, but its been corrupted by some kind of spell. Help him recover it!
 
-- Fix png magic bytes
-	- pngcheck
-		- Online version: https://www.nayuki.io/page/png-file-chunk-inspector
-	- https://hexed.it/
-	- https://asecuritysite.com/forensics/png?file=bg.png
-- LSB/layer analysis
-	- https://stegonline.georgeom.net/image
-	- https://www.aperisolve.com/54be76cbb51bde77f453f8c64ed407a4
+The file we're given has no extension and running `file` just reports `data`.
+
+```shell
+$ file advanced-potion-making
+advanced-potion-making: data
+```
+
+If we look at the [magic_bytes](../../reference/magic_bytes.md) in the hexdump, we can see—what appears to be—a corrupted PNG header as evidenced by the `IHDR` portion of the first 16 btyes.
 
 ```bash
 $ hexdump -C advanced-potion-making | head
@@ -33,6 +33,18 @@ $ hexdump -C advanced-potion-making | head
 00000080  ac 2d 2b 3e bf af 5f 07  18 01 82 d7 b2 f3 ff f3  |.-+>.._.........|
 00000090  ff fc 7f ff 7f 00 00 00  00 00 00 00 4b 18 58 02  |............K.X.|
 ```
+
+
+
+- Fix png magic bytes
+	- pngcheck
+		- Online version: https://www.nayuki.io/page/png-file-chunk-inspector
+	- https://hexed.it/
+	- https://asecuritysite.com/forensics/png?file=bg.png
+- LSB/layer analysis
+	- https://stegonline.georgeom.net/image
+	- https://www.aperisolve.com/54be76cbb51bde77f453f8c64ed407a4
+
 
 ```bash
 $ hexdump -C advanced-potion-making.png | head
