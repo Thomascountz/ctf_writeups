@@ -6,7 +6,6 @@ if File.exist?("./ctf.db") && ENV.fetch("DROP", false) == "true"
 end
 
 require "bundler/inline"
-require "date"
 
 gemfile do
   source "https://rubygems.org"
@@ -92,18 +91,14 @@ files.each do |file|
   categories = front_matter["categories"].map do |category|
     Category.find_or_initialize_by(name: category)
   end
-  writeup = Writeup.create(
-    ctf: ctf,
-    tools: tools,
-    categories: categories,
-    name: File.basename(file, ".md"),
-    url: front_matter["url"],
-    captured: front_matter["captured"],
-    flag: front_matter["flag"],
-    competition: front_matter["competition"],
-    flag: front_matter["flag"],
-    summary: front_matter["summary"]
-  ).save!
+  Writeup.find_or_initialize_by(name: File.basename(file, ".md")).tap do |writeup|
+    writeup.captured = front_matter["captured"]
+    writeup.categories = categories
+    writeup.competition = front_matter["competition"]
+    writeup.ctf = ctf
+    writeup.flag = front_matter["flag"]
+    writeup.summary = front_matter["summary"]
+    writeup.tools = tools
+    writeup.url = front_matter["url"]
+  end.save!
 end
-
-binding.pry
