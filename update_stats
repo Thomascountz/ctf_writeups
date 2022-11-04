@@ -5,10 +5,10 @@ require "bundler/inline"
 gemfile do
   source "https://rubygems.org"
 
-  gem 'sqlite3', require: true
   gem 'activerecord', require: 'active_record'
   gem "front_matter_parser", require: true
   gem "pry", require: true
+  gem 'sqlite3', require: true
 end
 
 ActiveRecord::Base.logger = Logger.new($stdout)
@@ -17,31 +17,19 @@ ActiveRecord::Base.establish_connection(
   :dbfile  => "ctf.db"
 )
 
-class Writeup
-  def initialize(
-    ctf: nil,
-    competition: nil,
-    categories: [],
-    tools: [],
-    url: nil,
-    captured: nil,
-    flag: nil,
-    summary: nil
-  )
-    @ctf = cft
-    @competition = competition
-    @categories = categories
-    @tools = tools
-    @url = url
-    @captured = captured
-    @flag = flag
-    @summary = summary
+ActiveRecord::Schema.define do
+  create_table :writeups do |table|
+    table.integer :id
+    table.text :cft, null: false
+    table.text :url, null: false
+    table.boolean :captured, default: false
+    table.text :flag
+    table.text :summary
+    table.timestamps
   end
-end
-
-def CTF
-  def initialize(name:)
-    @name
+  
+  create_table :cfts do |table|
+    table.integer
   end
 end
 
