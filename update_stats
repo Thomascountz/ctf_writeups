@@ -19,7 +19,6 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Schema.define do
   create_table :writeups do |table|
-    table.integer :id
     table.text :cft, null: false
     table.text :url, null: false
     table.boolean :captured, default: false
@@ -29,7 +28,8 @@ ActiveRecord::Schema.define do
   end
   
   create_table :cfts do |table|
-    table.integer
+    table.text :name, unique: true
+    table.timestamps
   end
 end
 
