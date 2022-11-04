@@ -65,9 +65,16 @@ If we squeeze the color range of the image within the narrow band of visible red
 
 ![](./attachments/advanced_potion_making_curves.png)
 
-### View color bit planes seperately
+### View color bit planes separately
 
-A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which allows you to step through different 
+A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which allows you to step through different color "bit planes." You can also use the online versions, StegOnline[^3] or aperisolve[^4] , which does much the same thing.
+
+![](attachments/advanced_potion_making_steg_online.png)
+The first bit plan (called `Red 0`) reveals the flag.
+
+
 
 [^1]: http://www.libpng.org/pub/png/book/chapter08.html#png.ch08.div.2
-[^2]: 
+[^2]: https://github.com/zardus/ctf-tools/blob/master/stegsolve/install
+[^3]: https://stegonline.georgeom.net
+[^4]: https://www.aperisolve.com
