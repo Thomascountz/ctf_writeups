@@ -80,6 +80,7 @@ class Category < ActiveRecord::Base
 end
 
 files = Dir["./writeups/**/*.md"]
+binding.pry
 files.each do |file|
   front_matter = FrontMatterParser::Parser.parse_file(
     file,
@@ -96,7 +97,7 @@ files.each do |file|
     ctf: ctf,
     tools: tools,
     categories: categories,
-    name: "file",
+    name: file,
     url: front_matter["url"],
     captured: front_matter["captured"],
     flag: front_matter["flag"],
@@ -105,5 +106,3 @@ files.each do |file|
     summary: front_matter["summary"]
   ).save!
 end
-
-binding.pry
