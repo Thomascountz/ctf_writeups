@@ -72,6 +72,9 @@ A common tools I've seen is `stegsolve`[^2], which is a java-based GUI which all
 ![](attachments/advanced_potion_making_steg_online.png)
 The first bit plan (called `Red 0`) reveals the flag.
 
+> **Note**
+> The image is a bit offset in the StegOnline tool. This is either a but with the tool or an issue with the PNG.
+
 A more refined technic is called LSB stenography. 
 
 LSB, or _Least Significant Bit_, stenography is a specific type of color manipulation in which one bit in the color encoding is modified independently.
