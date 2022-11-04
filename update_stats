@@ -13,8 +13,9 @@ end
 
 ActiveRecord::Base.logger = Logger.new($stdout)
 ActiveRecord::Base.establish_connection(
-  :adapter => "sqlite3",
-  :dbfile  => "ctf.db"
+  adapter: "sqlite3",
+  dbfile: "./ctf.db",
+  database: "writeups" 
 )
 
 ActiveRecord::Schema.define do
