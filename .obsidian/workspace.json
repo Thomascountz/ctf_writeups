@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "b5027a5708801f23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/tunn3l_v1s10n.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "c8d983803a2d6687",
             "type": "leaf",
             "state": {
@@ -170,17 +182,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7dd235dbfccbc72e",
+  "active": "6dd2064ea12fbb6e",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/tunn3l_v1s10n.md",
+    "writeups/picoctf_gym/advanced_potion_making.md",
     "writeups/ctflearn/forensics_101.md",
+    "writeups/picoctf_gym/glory_in_the_garden.md",
     "writeups/ctflearn/attachments/taking_ls_unlocked_pdf.png",
     "writeups/ctflearn/attachments/taking_ls_locked_pdf.png",
     "writeups/ctflearn/taking_ls.md",
     "writeups/picoctf_gym/attachments/shark2_protocol_hierarchy.png",
     "templates/_picoctf.md",
-    "templates/_ctflearn.md",
-    "writeups/picoctf_gym/macrohard_weakedge.md",
-    "reference/Resources.md",
-    "writeups/picoctf/forensics/wireshark_twoo_twooo_two_twoo.md"
+    "templates/_ctflearn.md"
   ]
 }
