@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "hexed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +102,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -182,7 +183,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6dd2064ea12fbb6e",
+  "active": "c02884df7a640f26",
   "lastOpenFiles": [
     "writeups/picoctf_gym/tunn3l_v1s10n.md",
     "writeups/picoctf_gym/advanced_potion_making.md",

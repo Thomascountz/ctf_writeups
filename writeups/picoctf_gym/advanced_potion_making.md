@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation]
-tools:[file, pngcheck, hexedit, stegonline, aperisolve]
+tools:[file, hexed.it, stegonline, aperisolve]
 url: https://play.picoctf.org/practice/challenge/205
 captured: 2022-11-03
 flag: picoCTF{w1z4rdry}
@@ -27,7 +27,31 @@ $ hexdump -C -n16 advanced-potion-making
 
 We can see that it's corrupted because the first 8 bytes of a PNG must be `89 50 4e 47 0d 0a 1a 0a`.
 
+> The first byte is used to detect transmission over a 7-bit channel--for example, email transfer programs often strip the 8th bit, thus changing the PNG signature. The 2nd, 3rd, and 4th bytes simply spell ``PNG'' (in ASCII, that is). Bytes 5 and 6 are end-of-line characters for Macintosh and Unix, respectively, and the combination of the two is the standard line ending for DOS, Windows, and OS/2. Byte 7 (CTRL-Z) is the end-of-file character for DOS text files, which allows one to TYPE the PNG file under DOS-like operating systems and see only the acronym ``PNG'' preceded by one strange character, rather than page after page of gobbledygook. Byte 8 is another Unix end-of-line character.[^1]
 
+| Hex Value | Decimal  Value | ASCII Interpretation                                         |
+| --------- | -------------- | ------------------------------------------------------------ |
+| 89        | 137            | A byte with its most significant bit set ("8-bit character") |
+| 50        | 80             | P                                                            |
+| 42        | 78             | N                                                            |
+| 11        | 71             | G                                                            |
+| 0d        | 13             | Carriage-return (CR) character, a.k.a. CTRL-M or ^M          |
+| 0a        | 10             | Line-feed (LF) character, a.k.a. CTRL-J or ^J                |
+| 1a        | 26             | CTRL-Z or ^Z                                                 |
+| 0a        | 10             | Line-feed (LF) character, a.k.a. CTRL-J or ^J                |
+
+Let's fix the header.
+
+```bash
+$ hexdump -C -n16 advanced-potion-making.png
+00000000  89 50 4e 47 0d 0a 1a 0a  00 00 00 0d 49 48 44 52  |.PNG........IHDR|
+```
+
+Now we can open the image.
+
+![](./attachments/advanced_potion_making_png.png)
+
+To the naked eye, this looks to be a solid red image. 
 
 - Fix png magic bytes
 	- pngcheck
@@ -52,3 +76,5 @@ $ hexdump -C advanced-potion-making.png | head
 00000080  ac 2d 2b 3e bf af 5f 07  18 01 82 d7 b2 f3 ff f3  |.-+>.._.........|
 00000090  ff fc 7f ff 7f 00 00 00  00 00 00 00 4b 18 58 02  |............K.X.|
 ```
+
+[^1]: http://www.libpng.org/pub/png/book/chapter08.html#png.ch08.div.2
