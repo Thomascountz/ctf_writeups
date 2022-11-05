@@ -37,22 +37,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf_gym/tunn3l_v1s10n.md",
+                "file": "reference/resources.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "c8d983803a2d6687",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -118,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/advanced_potion_making.md",
+                "file": "reference/resources.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/advanced_potion_making.md",
+                "file": "reference/resources.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/advanced_potion_making.md"
+                "file": "reference/resources.md"
               }
             }
           },
@@ -178,17 +170,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6dd2064ea12fbb6e",
+  "active": "b5027a5708801f23",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/tunn3l_v1s10n.md",
+    "writeups/picoctf_gym/advanced_potion_making.md",
     "writeups/picoctf_gym/glory_in_the_garden.md",
     "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
     "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md",
-    "writeups/picoctf_gym/tunn3l_v1s10n.md",
     "writeups/picoctf_gym/trivial_flag_tranfer_protocol.md",
     "writeups/picoctf_gym/matryoshka_doll.md",
     "writeups/picoctf_gym/macrohard_weakedge.md",
     "writeups/picoctf_gym/information.md",
-    "writeups/picoctf_gym/advanced_potion_making.md",
     "writeups/ctflearn/forensics_101.md"
   ]
 }
