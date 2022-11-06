@@ -138,4 +138,3 @@ Now we have a flag.
 ```shell
 $ cat flag.txt           
 picoCTF{336cf6d51c9d9774fd37196c1d7320ff}
-```
