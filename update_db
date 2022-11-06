@@ -94,10 +94,10 @@ files.each do |file_path|
   ).front_matter
   ctf = CTF.find_or_create_by(name: front_matter["ctf"])
   tools = front_matter["tools"].map do |tool|
-    Tool.find_or_initialize_by(name: tool)
+    Tool.find_or_create_by(name: tool)
   end
   categories = front_matter["categories"].map do |category|
-    Category.find_or_initialize_by(name: category)
+    Category.find_or_create_by(name: category)
   end
   Writeup.find_or_initialize_by(name: file_name).tap do |writeup|
     writeup.captured = front_matter["captured"]
