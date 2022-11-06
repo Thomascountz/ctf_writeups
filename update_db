@@ -27,7 +27,7 @@ ActiveRecord::Schema.define do
   create_table :writeups, if_not_exists: true do |table|
     table.references :ctf, null: false
     table.text :name, null: false, unique: true
-    table.text :hash, null: false
+    table.text :md5, null: false
     table.text :url, null: false
     table.timestamp :captured
     table.boolean :competition, default: false
@@ -86,7 +86,7 @@ files.each do |file_path|
   file_name = File.basename(file_path, ".md") # "./writeups/ctf/my_writeup.md" -> "my_writeup"
   md5 = Digest::MD5.hexdigest(File.read(file_path))
 
-  next if Writeup.find_by(name: file_name, hash: md5).present?
+  next if Writeup.find_by(name: file_name, md5: md5).present?
 
   front_matter = FrontMatterParser::Parser.parse_file(
     file_path,
@@ -106,7 +106,7 @@ files.each do |file_path|
     writeup.ctf = ctf
     writeup.file_path = file_path
     writeup.flag = front_matter["flag"]
-    writeup.hash = md5
+    writeup.md5 = md5
     writeup.summary = front_matter["summary"]
     writeup.tools = tools
     writeup.url = front_matter["url"]
