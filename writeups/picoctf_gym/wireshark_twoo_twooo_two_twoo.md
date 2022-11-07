@@ -4,6 +4,7 @@ competition: false
 categories: [forensics]
 tools: [wireshark, dcode-cipher-identifier, cyberchef, vim]
 url: https://play.picoctf.org/practice/challenge/110
+points: 100
 captured: 2022-11-02
 flag: picoCTF{dns_3xf1l_ftw_deadbeef}
 summary: Use Wireshark to sift through red herrings and identify DNS exfiltration traffic which divided the base64 encoded flag in the subdomain of six unique DNS ANAME queries.

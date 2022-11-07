@@ -4,6 +4,7 @@ competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation]
 tools: [file, hexed.it, stegonline, aperisolve]
 url: https://play.picoctf.org/practice/challenge/205
+points: 100
 captured: 2022-11-03
 flag: picoCTF{w1z4rdry}
 summary: After fixing the magic bytes of a corrupted PNG file, we can discover the flag within the red layer by adjusting the image curves or by using a color plane inspection tool

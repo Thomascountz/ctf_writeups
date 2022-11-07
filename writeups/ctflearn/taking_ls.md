@@ -4,6 +4,7 @@ competition: false
 categories: [forensics, web, cryptography, reverse engineering, binary exploitation, programming]
 tools: [unzip, cat]
 url: https://ctflearn.com/challenge/103
+points: 10
 captured: 2022-11-03
 flag: ABCTF{T3Rm1n4l_is_C00l 
 summary: Unzip an archive to reveal a ThePassword.txt inside a hidden directory file that unlocks a The\ Flag.pdf that contains the flag as plaintext.

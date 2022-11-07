@@ -4,6 +4,7 @@ competition: false
 categories: [forensics]
 tools: [wireshark, dcode-cipher-identifier, dpkg-deb, steghide]
 url: https://play.picoctf.org/practice/challenge/103
+points: 90
 captured: 2022-10-27
 flag: picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}
 summary: Used Wireshark to inspect and download six files trasferred via TFTP. The first two files described instructions and a plan encoded via ROT13. Next, the steghide Debian package and three image files were transferred. Using steghide and the passphrase from the plan file, one of the three image files contained the flag.

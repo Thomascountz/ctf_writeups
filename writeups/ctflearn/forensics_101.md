@@ -4,6 +4,7 @@ competition: false
 categories: [forensics]
 tools: [strings]
 url: https://ctflearn.com/challenge/96
+points: 30
 captured: 2022-11-03
 flag: flag{wow!_data_is_cool}
 summary: Find a flag carved into a JPG file using strings.

@@ -31,6 +31,7 @@ ActiveRecord::Schema.define do
     table.text :url, null: false
     table.timestamp :captured
     table.boolean :competition, default: false
+    table.integer :points
     table.text :flag
     table.text :summary
     table.text :file_path
@@ -105,6 +106,7 @@ files.each do |file_path|
     writeup.competition = front_matter["competition"]
     writeup.ctf = ctf
     writeup.file_path = file_path
+    writeup.points = front_matter["points"].to_i
     writeup.flag = front_matter["flag"]
     writeup.md5 = md5
     writeup.summary = front_matter["summary"]
