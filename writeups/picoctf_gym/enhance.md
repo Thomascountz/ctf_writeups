@@ -12,7 +12,7 @@ summary: Open the SVG in a text editor to reveal the flag as a text element.
 
 > Download this image file and find the flag.
 
-SVGs are defined by a series of instructions in XML.
+SVGs are defined by a series of instructions in XML. When we open the image, we can see
 
 Open up the SVG file in a text editor to reveal the flag as a `text` SVG element.
 
