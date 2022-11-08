@@ -12,3 +12,8 @@ summary:
 
 > Download this image file and find the flag.
 
+Open up the SVG file in a text editor to reveal the flag as a `text` SVG element.
+
+```svg
+
+```
