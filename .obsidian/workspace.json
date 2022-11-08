@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -145,7 +146,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "d0087b53422c4203",
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
     "templates/_picoctf.md",
     "conflict-files-obsidian-git.md",
