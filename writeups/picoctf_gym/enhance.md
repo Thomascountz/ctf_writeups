@@ -2,7 +2,7 @@
 ctf: picoctf_gym
 competition: false
 categories: [forensics]
-tools: [vim, grep]
+tools: [display, vim, grep]
 url: https://play.picoctf.org/practice/challenge/265
 points: 100
 captured: 2022-11-08
@@ -12,9 +12,15 @@ summary: Open the SVG in a text editor to reveal the flag as a text element.
 
 > Download this image file and find the flag.
 
-SVGs are defined by a series of instructions in XML. When we open the image, we can see
+When we open the image, we can see—what appears to be—some text.
 
-Open up the SVG file in a text editor to reveal the flag as a `text` SVG element.
+![](./attachments/enhance.png)
+
+SVGs, Scalable Vector Graphics, are defined by a series of instructions in XML. These instructions define a series of vectors such that they can "scale" infinitely. As such, my initial instinct was to find an SVG editor that would allow me to scale this image.
+
+That didn't work with `display`, so I tried to take a look at the XML itself and that's when I saw the flag.
+
+Open up the SVG file in a text editor to reveal the flag as a `text` SVG element or use grep to find the related `tspan`-s.
 
 ```shell
 grep "tspan*" drawing.flag.svg 
