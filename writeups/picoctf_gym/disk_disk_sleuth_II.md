@@ -22,7 +22,7 @@ Open it in autopsy by first creating a new case and host and providing the path 
 
 Analyze the `/1/` disk and navigate to the "File Analysis" page where you can search for the `down-at-the-bottom.txt` file.
 
-![disk_disk_sleuth_II](attachments/disk_disk_sleuth_II.png)
+![disk_disk_sleuth_II](./attachments/disk_disk_sleuth_II.png)
 
 The flag is revealed as ASCII art in the file contents.
 

@@ -18,4 +18,4 @@ The `.pcap` file only has nine packets in it.
 
 We can manually scan them and find the flag within the data of a TCP packet.
 
-![packets_primer_flag](attachments/packets_primer_flag.png)
+![packets_primer_flag](./attachments/packets_primer_flag.png)

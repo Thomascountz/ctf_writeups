@@ -14,4 +14,4 @@ summary: Highlighligt the "redacted" text in the PDF.
 
 Open the PDF and select the redacted text to reveal the flag.
 
-![redaction_gone_wrong](attachments/redaction_gone_wrong.png)
+![redaction_gone_wrong](./attachments/redaction_gone_wrong.png)
