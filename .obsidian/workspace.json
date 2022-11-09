@@ -4,31 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "f4c31626ffa21534",
+        "id": "775c70c901462b07",
         "type": "tabs",
         "children": [
           {
-            "id": "1974609b0bb7ced6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "templates/_picoctf.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "61cb474ecd92c3f2",
+            "id": "e4badc3233161a54",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -150,17 +137,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "61cb474ecd92c3f2",
+  "active": "e4badc3233161a54",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "templates/_picoctf.md",
     "templates/_ctflearn.md",
+    "writeups/picoctf_gym/file_types.md",
+    "conflict-files-obsidian-git.md",
     "writeups/ctflearn/forensics_101.md",
     "writeups/picoctf_gym/advanced_potion_making.md",
     "reference/resources.md",
     "writeups/picoctf_gym/tunn3l_v1s10n.md",
     "writeups/picoctf_gym/glory_in_the_garden.md",
-    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md",
-    "writeups/picoctf_gym/wireshark_doo_dooo_do_doo.md"
+    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md"
   ]
 }
