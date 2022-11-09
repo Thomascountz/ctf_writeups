@@ -109,7 +109,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "extensions.md",
+                "file": "writeups/picoctf_gym/extensions.md",
                 "mode": "source",
                 "source": false
               }
@@ -166,8 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -183,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "extensions.md",
+                "file": "writeups/picoctf_gym/extensions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -200,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "extensions.md",
+                "file": "writeups/picoctf_gym/extensions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -223,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "extensions.md"
+                "file": "writeups/picoctf_gym/extensions.md"
               }
             }
           },
