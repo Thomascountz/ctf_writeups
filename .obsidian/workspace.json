@@ -90,9 +90,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a1c490d96e7962b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/shark_on_wire_1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "vertical"
@@ -159,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/so_meta.md",
+                "file": "writeups/picoctf_gym/shark_on_wire_1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/so_meta.md",
+                "file": "writeups/picoctf_gym/shark_on_wire_1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/so_meta.md"
+                "file": "writeups/picoctf_gym/shark_on_wire_1.md"
               }
             }
           },
@@ -219,17 +231,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "6d0da937fc677629",
+  "active": "a1c490d96e7962b2",
   "lastOpenFiles": [
-    "writeups/picoctf_gym/disk_disk_sleuth_II.md",
     "writeups/picoctf_gym/so_meta.md",
+    "writeups/picoctf_gym/shark_on_wire_1.md",
+    "writeups/picoctf_gym/disk_disk_sleuth_II.md",
     "writeups/picoctf_gym/disk_disk_sleuth.md",
     "writeups/picoctf_gym/sleuthkit_intro.md",
     "writeups/picoctf_gym/redaction_gone_wrong.md",
     "writeups/picoctf_gym/packets_primer.md",
     "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/file_types.md",
-    "templates/_picoctf.md",
-    "templates/_ctflearn.md"
+    "templates/_picoctf.md"
   ]
 }
