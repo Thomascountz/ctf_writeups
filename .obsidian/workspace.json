@@ -4,22 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "c2dd8337f1729ade",
+        "id": "f4c31626ffa21534",
         "type": "tabs",
         "children": [
           {
-            "id": "d0087b53422c4203",
+            "id": "1974609b0bb7ced6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writeups/picoctf_gym/enhance.md",
+                "file": "templates/_picoctf.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "61cb474ecd92c3f2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -86,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/enhance.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +110,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/enhance.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,9 +131,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "writeups/picoctf_gym/enhance.md"
-              }
+              "state": {}
             }
           },
           {
@@ -146,10 +150,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "7dd235dbfccbc72e",
+  "active": "61cb474ecd92c3f2",
   "lastOpenFiles": [
-    "templates/_picoctf.md",
     "conflict-files-obsidian-git.md",
+    "templates/_picoctf.md",
     "templates/_ctflearn.md",
     "writeups/ctflearn/forensics_101.md",
     "writeups/picoctf_gym/advanced_potion_making.md",
