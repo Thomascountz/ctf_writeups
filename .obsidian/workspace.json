@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dc575356a519c1ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/sleuthkit_intro.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/redaction_gone_wrong.md",
+                "file": "writeups/picoctf_gym/sleuthkit_intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/redaction_gone_wrong.md",
+                "file": "writeups/picoctf_gym/sleuthkit_intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/redaction_gone_wrong.md"
+                "file": "writeups/picoctf_gym/sleuthkit_intro.md"
               }
             }
           },
@@ -171,10 +183,10 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "0dcb35ea89a4c53a",
+  "active": "dc575356a519c1ed",
   "lastOpenFiles": [
-    "writeups/picoctf_gym/packets_primer.md",
     "writeups/picoctf_gym/redaction_gone_wrong.md",
+    "writeups/picoctf_gym/packets_primer.md",
     "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/file_types.md",
     "templates/_picoctf.md",
