@@ -11,8 +11,12 @@
             "id": "e4badc3233161a54",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/lookey_here.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "writeups/picoctf_gym/lookey_here.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "writeups/picoctf_gym/lookey_here.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "writeups/picoctf_gym/lookey_here.md"
+              }
             }
           },
           {
@@ -137,17 +146,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "e4badc3233161a54",
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/file_types.md",
+    "writeups/picoctf_gym/lookey_here.md",
     "templates/_picoctf.md",
     "templates/_ctflearn.md",
-    "writeups/picoctf_gym/file_types.md",
     "conflict-files-obsidian-git.md",
     "writeups/ctflearn/forensics_101.md",
     "writeups/picoctf_gym/advanced_potion_making.md",
     "reference/resources.md",
     "writeups/picoctf_gym/tunn3l_v1s10n.md",
-    "writeups/picoctf_gym/glory_in_the_garden.md",
-    "writeups/picoctf_gym/wireshark_twoo_twooo_two_twoo.md"
+    "writeups/picoctf_gym/glory_in_the_garden.md"
   ]
 }
