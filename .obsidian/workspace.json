@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6fcc669f8fd4d329",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/disk_disk_sleuth.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -123,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/sleuthkit_intro.md",
+                "file": "writeups/picoctf_gym/disk_disk_sleuth.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/sleuthkit_intro.md",
+                "file": "writeups/picoctf_gym/disk_disk_sleuth.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/sleuthkit_intro.md"
+                "file": "writeups/picoctf_gym/disk_disk_sleuth.md"
               }
             }
           },
@@ -183,8 +195,9 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dc575356a519c1ed",
+  "active": "6fcc669f8fd4d329",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/sleuthkit_intro.md",
     "writeups/picoctf_gym/redaction_gone_wrong.md",
     "writeups/picoctf_gym/packets_primer.md",
     "writeups/picoctf_gym/lookey_here.md",
@@ -193,7 +206,6 @@
     "templates/_ctflearn.md",
     "conflict-files-obsidian-git.md",
     "writeups/ctflearn/forensics_101.md",
-    "writeups/picoctf_gym/advanced_potion_making.md",
-    "reference/resources.md"
+    "writeups/picoctf_gym/advanced_potion_making.md"
   ]
 }
