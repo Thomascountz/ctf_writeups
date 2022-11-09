@@ -1,0 +1,69 @@
+#!/usr/bin/env ruby
+
+def parse_ctf(ctf)
+  case ctf
+  when 1
+    :picoctf_gym
+  when 2
+    :ctf_learn
+  else
+    puts "[ERROR]: Can't use quick_add for unrecognized CTF."
+    exit(1)
+  end
+end
+
+def parse_name(name, ctf)
+  case ctf
+  when :picoctf_gym
+    "./writeups/picoctf_gym/#{name}.md"
+  when :ctf_learn
+    "./writeups/ctflearn/#{name}.md"
+  end
+end
+
+def construct_url(id, ctf)
+  case ctf
+  when :picoctf_gym
+    "https://play.picoctf.org/practice/challenge/#{id}"
+  when :ctf_learn
+    "https://ctflearn.com/challenge/#{id}"
+  end
+end
+
+puts "==CTF WRITEUP QUICKADD=="
+puts "Which Capture the Flag?"
+puts "[1] - PicoCTF Gym"
+puts "[2] - CTFLearn"
+ctf = gets.chomp.to_i
+ctf = parse_ctf(ctf)
+puts "Name?"
+name = gets.chomp
+file_path = parse_name(name, ctf)
+puts "URL ID?"
+id = gets.chomp
+url = construct_url(id, ctf)
+puts "Points?"
+points = gets.chomp
+puts "Tools? (Comma seperated; no spaces)"
+tools = gets.chomp.split(",")
+puts "Categories? (Comma seperated; no spaces) [forensics, web, cryptography, reverse_engineering, binary_exploitation, programming]"
+categories = gets.chomp.split(",")
+puts "Flag?"
+flag = gets.chomp
+puts "Summary?"
+summary = gets.chomp
+captured = Time.now.strftime("%Y-%m-%e")
+
+File.open(file_path, "w") do |f|
+  f.puts("---")
+  f.puts("ctf: #{ctf}")
+  f.puts("competition: false")
+  f.puts("categories: #{categories}")
+  f.puts("tools: #{tools}")
+  f.puts("url: #{url}")
+  f.puts("points: #{points}")
+  f.puts("captured: #{captured}")
+  f.puts("flag: #{flag}")
+  f.puts("summary: #{summary}")
+  f.puts("---")
+end
