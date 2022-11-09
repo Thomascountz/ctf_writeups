@@ -5,7 +5,7 @@ categories: [forensics]
 tools: [wireshark]
 url: https://play.picoctf.org/practice/challenge/286
 points: 100
-captured: 2022-10-09
+captured: 2022-11-09
 flag: picoCTF{p4ck37_5h4rk_b9d53765}
 summary: Manually scan through the nine packets in wireshark to find the flag within the data of a TCP packet.
 ---

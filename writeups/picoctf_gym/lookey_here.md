@@ -5,7 +5,7 @@ categories: [forensics]
 tools: [grep]
 url: https://play.picoctf.org/practice/challenge/279
 points: 100
-captured: 2022-10-09
+captured: 2022-11-09
 flag: picoCTF{gr3p_15_@w3s0m3_58f5c024}
 summary: Use `grep` to find the flag in a large 107KB text file.
 ---
