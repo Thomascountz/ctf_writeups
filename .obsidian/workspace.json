@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "0dcb35ea89a4c53a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/redaction_gone_wrong.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -82,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -98,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writeups/picoctf_gym/packets_primer.md",
+                "file": "writeups/picoctf_gym/redaction_gone_wrong.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writeups/picoctf_gym/packets_primer.md",
+                "file": "writeups/picoctf_gym/redaction_gone_wrong.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writeups/picoctf_gym/packets_primer.md"
+                "file": "writeups/picoctf_gym/redaction_gone_wrong.md"
               }
             }
           },
@@ -158,17 +171,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "cb3ee485861c359d",
+  "active": "0dcb35ea89a4c53a",
   "lastOpenFiles": [
-    "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/packets_primer.md",
+    "writeups/picoctf_gym/redaction_gone_wrong.md",
+    "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/file_types.md",
     "templates/_picoctf.md",
     "templates/_ctflearn.md",
     "conflict-files-obsidian-git.md",
     "writeups/ctflearn/forensics_101.md",
     "writeups/picoctf_gym/advanced_potion_making.md",
-    "reference/resources.md",
-    "writeups/picoctf_gym/tunn3l_v1s10n.md"
+    "reference/resources.md"
   ]
 }
