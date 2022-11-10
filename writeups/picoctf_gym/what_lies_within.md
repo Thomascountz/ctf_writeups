@@ -34,6 +34,10 @@ b4,bgr,msb,xy       .. text: " V\"c7Ga4"
 b4,abgr,msb,xy      .. text: "gOC_$_@o"
 ```
 
-In this case, the output `b1,abgr,msb,xy`
+In this case, the output `b1,abgr,msb,xy` I _think_ means the first blue bit plane, ordered by alpha, blue, green, red, ordered by most-significant bit, ordered by row then column.
+
+I opened the image in `stegsolve.jar` and can see some data there, but I don't know how to extract it.
+
+![what_lies_within_blue_bit_plane](./attachments/what_lies_within_blue_bit_plane.png)
 
 [^1]: https://trailofbits.github.io/ctf/forensics/
