@@ -34,6 +34,6 @@ b4,bgr,msb,xy       .. text: " V\"c7Ga4"
 b4,abgr,msb,xy      .. text: "gOC_$_@o"
 ```
 
-In this case, the output ``
+In this case, the output `b1,abgr,msb,xy`
 
 [^1]: https://trailofbits.github.io/ctf/forensics/
