@@ -9,3 +9,6 @@ captured: 2022-11-10
 flag: 
 summary: 
 ---
+
+> There's something in the building. Can you retrieve the flag?
+

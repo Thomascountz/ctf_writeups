@@ -11,8 +11,12 @@
             "id": "83ef16f2e5c6efc0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/what_lies_within.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "writeups/picoctf_gym/what_lies_within.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "writeups/picoctf_gym/what_lies_within.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "writeups/picoctf_gym/what_lies_within.md"
+              }
             }
           },
           {
@@ -137,7 +146,7 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "83ef16f2e5c6efc0",
+  "active": "7dd235dbfccbc72e",
   "lastOpenFiles": [
     "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/packets_primer.md",
