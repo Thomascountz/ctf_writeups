@@ -40,8 +40,6 @@ ActiveRecord::Schema.define do
 
   create_table :ctfs, if_not_exists: true do |table|
     table.text :name, unique: true
-    table.text :description
-    table.text :url
     table.timestamps
   end
 
