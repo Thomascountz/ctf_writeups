@@ -75,6 +75,11 @@ def gets_summary
   gets.chomp
 end
 
+def gets_description
+  puts "Description?"
+  gets.chomp
+end
+
 def update_db
   puts "Would you like to update ctf.db? [Y/n]"
   choice = gets.chomp
@@ -93,23 +98,26 @@ points = gets_points
 tools = gets_tools
 flag = gets_flag
 summary = gets_summary
+description = gets_description
 captured = Time.now.strftime("%Y-%m-%e")
 
 puts "\n\n"
 puts "Writing file #{file_path}"
 
 File.open(file_path, "w") do |f|
-  f.puts("---")
-  f.puts("ctf: #{ctf}")
-  f.puts("competition: false")
-  f.puts("categories: [#{categories.join(", ")}]")
-  f.puts("tools: [#{tools.join(", ")}]")
-  f.puts("url: #{url}")
-  f.puts("points: #{points}")
-  f.puts("captured: #{captured}")
-  f.puts("flag: #{flag}")
-  f.puts("summary: #{summary}")
-  f.puts("---")
+  f.puts "---"
+  f.puts "ctf: #{ctf}"
+  f.puts "competition: false"
+  f.puts "categories: [#{categories.join(", ")}]"
+  f.puts "tools: [#{tools.join(", ")}]"
+  f.puts "url: #{url}"
+  f.puts "points: #{points}"
+  f.puts "captured: #{captured}"
+  f.puts "flag: #{flag}"
+  f.puts "summary: #{summary}"
+  f.puts "---"
+  f.puts "\n"
+  f.puts "> #{description}"
 end
 
 puts "File contents:"
