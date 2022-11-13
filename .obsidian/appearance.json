@@ -2,5 +2,6 @@
   "accentColor": "",
   "cssTheme": "Minimal",
   "monospaceFontFamily": "JetBrains Mono",
-  "theme": "system"
+  "theme": "system",
+  "baseFontSize": 14
 }
