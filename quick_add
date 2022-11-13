@@ -80,6 +80,16 @@ def gets_description
   gets.chomp
 end
 
+def gets_captured
+  puts "Flag already captured? [Y/n]"
+  captured = nil
+  choice = gets.chomp
+  if choice == "y" || choice == "Y"
+    captured = Time.now.strftime("%Y-%m-%e")
+  end
+  captured
+end
+
 def update_db
   puts "Would you like to update ctf.db? [Y/n]"
   choice = gets.chomp
@@ -99,7 +109,7 @@ tools = gets_tools
 flag = gets_flag
 summary = gets_summary
 description = gets_description
-captured = Time.now.strftime("%Y-%m-%e")
+captured = gets_captured
 
 puts "\n\n"
 puts "Writing file #{file_path}"
