@@ -84,7 +84,7 @@ When we visit that link, we see the analysis page for inode 12.
 
 Here, we can see the metadata contained within that inode. This includes the name of the file, the file type, etc.
 
-Additionally, at the bottom of that page, there's a link under "Direct Blocks." These links to blocks, or _file allocation units_, of the partition on the physical media that the filesystem occupies. 
+Additionally, at the bottom of that page, there's a link under "Direct Blocks." These are links to blocks, or _file allocation units_, of the partition on the physical media that the filesystem occupies. 
 
 For inode `12`, the only block is `2049`. 
 
@@ -137,9 +137,9 @@ Back to our first question, how did data end up in the slack space in such a way
 
 tl;dr Tools like `bmap` do exactly that.[^4]
 
-I'm not 100% certain, but my assumption is that `bmap` will find slack space in blocks by looking at the disk directly and considering which bytes are not considered as part of the file by the inode in order to write data there.
+My understanding is that `bmap` will find slack space in blocks by looking at the disk directly and considering which bytes are not considered as part of the file by the inode in order to write data there.
 
-In the wide, this technique can be used to store data in filesystems that we don't have write privileges to.
+In the wild, this technique can be used to store data in filesystems that we don't have write privileges to.
 
 > File slack space is more likely to be used by people who don't have the permission to write files on the system, such as hackers. For example, hackers could use the technique to store small Perl scripts or lists of cracked passwords.[^4]
 
