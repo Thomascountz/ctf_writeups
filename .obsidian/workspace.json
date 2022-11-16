@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d17585d76d137e91",
+        "id": "2affc7258d37a8b5",
         "type": "tabs",
         "children": [
           {
-            "id": "dddffb833c300283",
+            "id": "d9881d65cfc103f8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -138,17 +138,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "dddffb833c300283",
+  "active": "d9881d65cfc103f8",
   "lastOpenFiles": [
+    "writeups/picoctf_gym/wpa-ing_out.md",
+    "writeups/picoctf_gym/scrambled_bytes.md",
+    "writeups/picoctf_gym/redaction_gone_wrong.md",
     "reference/resources.md",
     "writeups/picoctf_gym/pitter_patter_platters.md",
     "writeups/picoctf_gym/enhance.md",
     "writeups/picoctf_gym/extensions.md",
     "writeups/picoctf_gym/lookey_here.md",
     "writeups/picoctf_gym/packets_primer.md",
-    "writeups/picoctf_gym/shark_on_wire_1.md",
-    "writeups/picoctf_gym/redaction_gone_wrong.md",
-    "writeups/picoctf_gym/sleuthkit_intro.md",
-    "writeups/picoctf_gym/disk_disk_sleuth.md"
+    "writeups/picoctf_gym/shark_on_wire_1.md"
   ]
 }
