@@ -11,8 +11,13 @@
             "id": "d9881d65cfc103f8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "writeups/picoctf_gym/m00nwalk.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -65,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "bb78030f85084c58",
@@ -82,6 +86,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "writeups/picoctf_gym/m00nwalk.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -103,7 +108,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "writeups/picoctf_gym/m00nwalk.md"
+              }
             }
           },
           {
@@ -120,6 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "writeups/picoctf_gym/m00nwalk.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
